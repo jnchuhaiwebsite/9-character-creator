@@ -26,16 +26,17 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en' // 设置 HTML 语言
       },
-      title: 'Baby Name Generator AI - Smart Name Suggestions for Your Baby', // 网站标题
+      title: 'South Park Character Creator - Create Your Own South Park Character', // 网站标题
       meta: [
         { charset: 'utf-8' }, // 字符集
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }, // 移动端视口设置
-        { name: 'description', content: 'Baby Name Generator AI - Get personalized baby name suggestions powered by artificial intelligence. Find the perfect name for your baby with our smart AI name generator.' } // 网站描述
+        { name: 'description', content: 'Create your own South Park character with our AI-powered character creator. Design unique South Park style characters with custom features, outfits, and accessories.' }, // 网站描述
+        { name: 'keywords', content: 'south park character creator, south park maker, create south park character, south park avatar maker, south park style generator' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://www.genbabyname.com' }, // 规范链接
-        // { rel: 'alternate', href: 'https://www.genbabyname.com', hreflang: 'x-default' }, // 默认语言版本
-        // { rel: 'alternate', href: 'https://www.genbabyname.com', hreflang: 'en' }, // 英文版本
+        { rel: 'canonical', href: 'https://www.southparkcreator.com' }, // 规范链接
+        // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'x-default' }, // 默认语言版本
+        // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'en' }, // 英文版本
       ],
       script: [
         { src: '/js/c6h.js', async: true } 

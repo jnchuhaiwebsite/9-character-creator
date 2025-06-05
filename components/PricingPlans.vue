@@ -1,7 +1,7 @@
 <template>
   <section
     id="pricing"
-    class="py-16 hero-gradient-bg"
+    class="py-16"
     aria-labelledby="pricing-heading"
   >
     <div class="max-w-7xl mx-auto px-4">
@@ -9,7 +9,7 @@
         Choose Your Plan
       </div>
       <h2
-        class="text-baby-coral text-center text-4xl font-bold mb-4 font-medium"
+        class="text-southpark-stan text-center text-4xl font-bold mb-4 font-medium"
       >
         Simple, Transparent Pricing
       </h2>
@@ -20,7 +20,7 @@
       <!-- 加载状态 -->
       <div v-if="isPlansLoading" class="flex justify-center items-center py-20">
         <div
-          class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-baby-coral"
+          class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-southpark-stan"
           aria-label="Loading pricing plans"
         ></div>
       </div>
@@ -37,22 +37,22 @@
           :class="[
             'bg-white rounded-xl p-8 flex flex-col',
             plan.is_popular
-              ? 'border-2 border-baby-coral shadow-lg relative'
-              : 'border border-baby-pink/20 shadow-sm hover:shadow-md transition-shadow',
+              ? 'border-2 border-southpark-stan shadow-lg relative'
+              : 'border border-southpark-snow/20 shadow-sm hover:shadow-md transition-shadow',
             plan.price === 0 ? 'hidden md:flex' : 'flex'
           ]"
         >
           <div
             v-if="plan.is_popular"
-            class="absolute -top-3 right-6 px-3 py-1 bg-gradient-to-r from-baby-coral to-baby-purple text-white text-sm rounded-full"
+            class="absolute -top-3 right-6 px-3 py-1 bg-southpark-stanButton text-white text-sm rounded-full"
           >
             Most Popular
           </div>
-          <h3 class="text-2xl font-bold text-baby-coral mb-2 font-medium">
+          <h3 class="text-2xl font-bold text-southpark-stan mb-2 font-medium">
             {{ plan.name }}
           </h3>
           <p class="text-gray-600 mb-6">{{ plan.description }}</p>
-          <div class="text-3xl font-bold text-baby-coral mb-6">
+          <div class="text-3xl font-bold text-southpark-stan mb-6">
             ${{ plan.price }}
             <span class="text-gray-500 text-base font-normal">/month</span>
           </div>
@@ -62,7 +62,7 @@
               :key="fIndex"
               class="flex items-center text-gray-600"
             >
-              <span class="mr-2 text-baby-mint" aria-hidden="true">✓</span>
+              <span class="mr-2 text-southpark-stan" aria-hidden="true">✓</span>
               {{ feature }}
             </li>
           </ul>
@@ -119,11 +119,11 @@ export default defineComponent({
     // 获取按钮样式
     const getButtonClass = (plan: any): string => {
       if (plan.price === 0) {
-        return "bg-baby-pink/10 text-baby-coral hover:bg-baby-pink/20";
+        return "bg-southpark-snow/10 text-southpark-stan hover:bg-southpark-snow/20";
       } else if (plan.is_popular) {
-        return "bg-gradient-to-r from-baby-coral to-baby-purple text-white hover:opacity-90";
+        return "bg-southpark-stanButton text-white hover:opacity-90";
       } else {
-        return "bg-gradient-to-r from-baby-blue to-baby-purple text-white hover:opacity-90";
+        return "bg-southpark-stanButton text-white hover:opacity-90";
       }
     };
     

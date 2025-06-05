@@ -90,7 +90,7 @@
       <SignInButton mode="modal">
         <button id="bindLogin"
           :disabled="isAuthLoading"
-          class="px-4 py-2 rounded-lg bg-gradient-to-r from-baby-coral to-baby-purple text-white hover:opacity-90 transition-all text-sm font-medium disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-md hover:shadow-lg"
+          class="px-4 py-2 rounded-lg bg-southpark-stan text-white hover:opacity-90 transition-all text-sm font-medium disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-md hover:shadow-lg"
         >
           <svg v-if="isAuthLoading" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -174,7 +174,7 @@
     <SignInButton v-else mode="modal">
       <button id="bindLogin"
         :disabled="isAuthLoading"
-        class="mt-4 w-full py-3 rounded-lg bg-gradient-to-r from-baby-coral to-baby-purple text-white hover:opacity-90 transition-all text-base font-medium disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-md hover:shadow-lg"
+        class="mt-4 w-full py-3 rounded-lg bg-southpark-stan text-white hover:opacity-90 transition-all text-base font-medium disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-md hover:shadow-lg"
       >
         <svg v-if="isAuthLoading" class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>

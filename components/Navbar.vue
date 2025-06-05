@@ -1,8 +1,7 @@
 <template>
   <header>
     <nav
-      class="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-md"
-      style="background: rgba(255, 182, 193, 0.15)"
+      class="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-md bg-southpark-mountain"
     >
       <div class="max-w-5xl mx-auto px-4">
         <div class="flex items-center justify-between h-16">
@@ -15,7 +14,7 @@
 
           <!-- PC端导航 -->
           <div class="hidden lg:flex items-center space-x-8">
-            <template v-for="(section, index) in sections" :key="index">
+            <template v-for="(section, index) in filteredSections" :key="index">
               <NuxtLink
                 v-if="section.href"
                 :to="section.href"
@@ -104,7 +103,7 @@
           <div class="pt-16 px-4 pb-8">
             <!-- 导航链接 -->
             <div class="space-y-2 mb-6">
-              <template v-for="(section, index) in sections" :key="index">
+              <template v-for="(section, index) in filteredSections" :key="index">
                 <NuxtLink
                   v-if="section.href"
                   :to="section.href"
@@ -133,11 +132,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onUnmounted, onMounted } from "vue";
+import { ref, watch, onUnmounted, onMounted, computed } from "vue";
 import { useNavigation } from "~/utils/navigation";
+import { useClerkAuth } from '~/utils/auth'
 
 // 状态管理
 const isOpen = ref(false);
+const { isSignedIn } = useClerkAuth();
 
 // 使用导航工具
 const { activeSection, sections, handleNavClick, handleScroll, executeScroll } =
@@ -147,6 +148,17 @@ const { activeSection, sections, handleNavClick, handleScroll, executeScroll } =
 const handleSkipClick = (href: string) => {
   isOpen.value = false;
 };
+
+// 过滤导航项
+const filteredSections = computed(() => {
+  return sections.filter(section => {
+    // 如果是"我的作品"页面且用户未登录，则不显示
+    if (section.href === '/my-works' && !isSignedIn.value) {
+      return false;
+    }
+    return true;
+  });
+});
 
 onMounted(() => {
   // 只重置overflow，不改变滚动位置

@@ -24,7 +24,7 @@ export function useSeo(options: SeoOptions) {
   // 确保描述在140-160个字符之间
   let description = options.description
   if (description.length < 140) {
-    description = description + ' - Generate unique and meaningful baby names with our AI-powered baby name generator.'
+    description = description + ' - Create unique South Park style characters with our AI-powered character generator.'
   } else if (description.length > 160) {
     description = description.substring(0, 157) + '...'
   }
@@ -38,7 +38,7 @@ export function useSeo(options: SeoOptions) {
       },
       // {
       //   name: 'keywords',
-      //   content: 'baby name generator, AI baby names, unique baby names, baby name suggestions, baby name finder, baby name ideas',
+      //   content: 'South Park character creator, AI character generator, custom South Park character, character design, South Park style',
       // },
       // Open Graph
       {
@@ -52,7 +52,7 @@ export function useSeo(options: SeoOptions) {
       { property: 'og:type', content: options.ogType || 'website' },
       { property: 'og:url', content: fullUrl },
       { property: 'og:image', content: options.ogImage || `${baseUrl}/logo.png` },
-      { property: 'og:site_name', content: 'baby name generator ai' },
+      { property: 'og:site_name', content: 'South Park Character Creator' },
       ...(options.other || []),
 
       // Twitter Card

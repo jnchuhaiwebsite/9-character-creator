@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen blog-page-gradient">
-
     <div class="pt-32 py-10 mx-auto w-11/12 max-w-4xl">
       <NuxtLink
         to="/blog"
@@ -13,7 +12,7 @@
 
       <article v-if="post" class="prose prose-slate max-w-none bg-white p-6 md:p-8 rounded-xl shadow-sm">
         <h1 class="text-3xl md:text-4xl font-bold mb-6 text-baby-coral border-l-4 border-baby-coral pl-4">{{ post.title}}</h1>
-        
+
         <div class="flex items-center gap-2 mb-8 text-gray-500 text-sm">
           <span>{{ post.date }}</span>
           <span class="inline-block w-1 h-1 bg-gray-400 rounded-full"></span>
@@ -25,8 +24,19 @@
         <!-- Rich text content -->
         <div class="text-gray-700" v-html="post.content"></div>
 
+        <!-- Call to Action -->
+        <div v-if="post.cta" class="mt-12 text-center">
+          <NuxtLink
+            to="/"
+            class="inline-block px-6 py-3 bg-baby-coral hover:bg-baby-coral-dark text-white rounded-lg transition-colors font-medium bg-southpark-stanButton"
+          >
+            👉 Back to Home
+          </NuxtLink>
+        </div>
+
         <!-- Related articles section -->
         <div class="mt-12 pt-8 border-t border-gray-200" v-if="relatedPosts.length > 0">
+          <h2 class="text-xl font-bold mb-4">Related Articles</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <NuxtLink 
               v-for="relatedPost in relatedPosts" 
@@ -34,21 +44,10 @@
               :to="`/blog/${relatedPost.id}`"
               class="p-4 border border-gray-100 rounded-lg hover:bg-blue-pale transition-colors"
             >
-              <h2 class="font-medium mb-2 text-lg">{{ relatedPost.title }}</h2>
+              <h3 class="font-medium mb-2 text-lg">{{ relatedPost.title }}</h3>
               <p class="text-sm text-gray-600 line-clamp-2">{{ relatedPost.description }}</p>
             </NuxtLink>
           </div>
-        </div>
-
-        <!-- Action button -->
-        <div class="text-center mt-12">
-          <h3 class="font-medium mb-4">Return to Homepage</h3>
-          <NuxtLink
-            to="/"
-            class="inline-block px-6 py-3 bg-baby-coral hover:bg-baby-coral-dark text-white rounded-lg transition-colors font-medium"
-          >
-            👉 Back to Home
-          </NuxtLink>
         </div>
       </article>
       <div v-else class="text-center py-12">
@@ -109,6 +108,7 @@ const title = computed(() => {
     ? post.value.title.substring(0, 55) + '...' 
     : post.value.title;
 });
+
 //设置页面元数据
 useSeo({
   title: title.value,
@@ -150,5 +150,30 @@ const handleBackToList = () => {
 .category-badge {
   background-color: var(--theme-primary);
   color: white;
+}
+
+/* 文章内容样式 */
+.prose {
+  @apply text-gray-700;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-gray-800;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-6 mb-3 text-gray-800;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.prose li {
+  @apply mb-2;
 }
 </style>

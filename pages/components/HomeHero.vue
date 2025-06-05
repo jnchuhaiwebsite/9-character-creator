@@ -1,12 +1,12 @@
 <template>
-  <div class="home-hero-container w-full pb-16 bg-gradient-to-b from-baby-pink/20 to-baby-blue/20 min-h-screen">
+  <div class="home-hero-container w-full pb-16 bg-gradient-to-b from-southpark-snow/20 to-southpark-background/20 min-h-screen">
     <!-- 顶部标题区域 -->
     <div class="text-center px-4 py-12 pt-32">
-      <h1 class="text-4xl md:text-5xl font-bold text-baby-coral mb-4 text-center animate-float">
-        ai baby name generator - Find Your Perfect Baby Name
+      <h1 class="text-4xl md:text-5xl font-bold text-southpark-kenny mb-4 text-center animate-float">
+        South Park Character Creator - Create Your Unique Character
       </h1>
       <h2 class="text-gray-600 text-base md:text-lg mb-8 text-center max-w-2xl mx-auto">
-        Discover unique and meaningful baby names with our baby name generator ai. Get personalized suggestions based on your preferences.
+        Use our AI character creator to easily create unique South Park style characters. Get personalized character generation suggestions based on your preferences.
       </h2>
     </div>
 
@@ -18,7 +18,7 @@
           <!-- Gender Selection -->
           <div class="space-y-2 relative">
             <label class="block text-sm font-medium text-gray-700 py-1.5">Gender</label>
-            <select v-model="gender" class="w-full h-12 px-4 rounded-xl border-2 border-baby-coral/30 bg-white/90 shadow-sm hover:border-baby-coral/50 focus:border-baby-coral/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
+            <select v-model="gender" class="w-full h-12 px-4 rounded-xl border-2 border-southpark-kenny/30 bg-white/90 shadow-sm hover:border-southpark-kenny/50 focus:border-southpark-kenny/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
               <option value="Boy">Boy</option>
               <option value="Girl">Girl</option>
               <option value="Unisex">Unisex</option>
@@ -32,7 +32,7 @@
               <label class="block text-sm font-medium text-gray-700">Attribute Characteristics</label>
               <button 
                 @click="setRandomExample"
-                class="bg-baby-coral/10 hover:bg-baby-coral/20 text-baby-coral px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 transition-all duration-300"
+                class="bg-southpark-kenny/10 hover:bg-southpark-kenny/20 text-southpark-kenny px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 transition-all duration-300"
               >
                 <ArrowPathIcon class="w-4 h-4" />
                 Examples
@@ -42,14 +42,14 @@
               type="text" 
               v-model="style"
               placeholder="Describe your hopes for the name(Meaning/Blessing, Style/Feeling, Rhymed etc.)"
-              class="w-full h-12 px-4 rounded-xl border-2 border-baby-coral/30 bg-white/90 shadow-sm hover:border-baby-coral/50 focus:border-baby-coral/60 transition-all duration-300"
+              class="w-full h-12 px-4 rounded-xl border-2 border-southpark-kenny/30 bg-white/90 shadow-sm hover:border-southpark-kenny/50 focus:border-southpark-kenny/60 transition-all duration-300"
             />
           </div>
 
           <!-- Country Selection -->
           <div class="space-y-2 relative">
             <label class="block text-sm font-medium text-gray-700">Origin</label>
-            <select v-model="country" class="w-full h-12 px-4 rounded-xl border-2 border-baby-coral/30 bg-white/90 shadow-sm hover:border-baby-coral/50 focus:border-baby-coral/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
+            <select v-model="country" class="w-full h-12 px-4 rounded-xl border-2 border-southpark-kenny/30 bg-white/90 shadow-sm hover:border-southpark-kenny/50 focus:border-southpark-kenny/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
               <option value="Any">Any</option>
               <option value="AfricanArabic">African Arabic</option>
               <option value="Arabic">Arabic</option>
@@ -80,7 +80,7 @@
           <!-- Length Selection -->
           <div class="space-y-2 relative">
             <label class="block text-sm font-medium text-gray-700">Name Length</label>
-            <select v-model="length" class="w-full h-12 px-4 rounded-xl border-2 border-baby-coral/30 bg-white/90 shadow-sm hover:border-baby-coral/50 focus:border-baby-coral/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
+            <select v-model="length" class="w-full h-12 px-4 rounded-xl border-2 border-southpark-kenny/30 bg-white/90 shadow-sm hover:border-southpark-kenny/50 focus:border-southpark-kenny/60 transition-all duration-300 cursor-pointer appearance-none pr-10">
               <option value="Any">Any</option>
               <option value="short">Short</option>
               <option value="medium">Medium</option>
@@ -96,7 +96,7 @@
               type="text" 
               v-model="excludeNamesInput"
               placeholder="e.g., Emma, Noah, Sophia"
-              class="w-full h-12 px-4 rounded-xl border-2 border-baby-coral/30 bg-white/90 shadow-sm hover:border-baby-coral/50 focus:border-baby-coral/60 transition-all duration-300"
+              class="w-full h-12 px-4 rounded-xl border-2 border-southpark-kenny/30 bg-white/90 shadow-sm hover:border-southpark-kenny/50 focus:border-southpark-kenny/60 transition-all duration-300"
             />
           </div>
         </div>
@@ -106,7 +106,7 @@
           <button 
             @click="generateNames"
             :disabled="isProcessing"
-            class="bg-gradient-to-r from-baby-coral to-baby-purple text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-baby-coral/90 hover:to-baby-purple/90 transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce-soft disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mx-auto"
+            class="bg-gradient-to-r from-southpark-kenny to-southpark-stan text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-southpark-kenny/90 hover:to-southpark-stan/90 transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce-soft disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mx-auto"
           >
             <ArrowPathIcon v-if="isProcessing" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />
             {{ isProcessing ? 'Generating...' : 'Generate Names' }}
@@ -123,7 +123,7 @@
         <button 
           @click="generateNames"
           :disabled="isProcessing"
-          class="bg-gradient-to-r from-baby-coral to-baby-purple text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-baby-coral/90 hover:to-baby-purple/90 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          class="bg-gradient-to-r from-southpark-kenny to-southpark-stan text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-southpark-kenny/90 hover:to-southpark-stan/90 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
         >
           <ArrowPathIcon v-if="isProcessing" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" />
           {{ isProcessing ? 'Generating...' : 'Generate Again' }}
@@ -133,10 +133,10 @@
         <div 
           v-for="name in generatedNames" 
           :key="name.index"
-          class="bg-gradient-to-b from-baby-pink/20 to-baby-blue/20 p-4 rounded-xl hover:shadow-md transition-all duration-300 group h-full"
+          class="bg-gradient-to-b from-southpark-snow/20 to-southpark-background/20 p-4 rounded-xl hover:shadow-md transition-all duration-300 group h-full"
         >
           <div class="flex justify-between items-start mb-2">
-            <span class="text-xl font-semibold text-gray-800 group-hover:text-baby-coral transition-colors">{{ name.name }}</span>
+            <span class="text-xl font-semibold text-gray-800 group-hover:text-southpark-kenny transition-colors">{{ name.name }}</span>
             <div class="flex items-center gap-2">
               <span class="text-xs text-gray-600 bg-white/50 px-2 py-0.5 rounded-full">{{ name.origin_language_culture }}</span>
               <button 

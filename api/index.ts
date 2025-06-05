@@ -4,15 +4,15 @@ import { useRuntimeConfig } from 'nuxt/app'
 console.log('当前环境:', process.env.NODE_ENV);
 
 const baseUrl = process.env.NODE_ENV === 'development'
-  ? '/nuxtRequest'
-  : 'https://baby.genbabyname.com';
+  ? 'http://192.168.0.205:8686'
+  : 'https://baby.genparkmaker.com';
 
 console.log('当前baseUrl:', baseUrl);
 // API接口URL列表
 const urlList = {
   setUserInfo: baseUrl + '/api/user/auth',        // 设置用户信息
   getCurrentUser: baseUrl + '/api/user/info',   // 获取当前用户信息
-  createTasks: baseUrl + '/api/task/chat/baby_name',     // 创建任务
+  createTasks: baseUrl + '/api/task/park_maker/create',     // 创建任务
   getSubPlans: baseUrl + '/api/website/priceList',     // 获取套餐信息
   payOrder: baseUrl + '/api/pay/stripe',  // 支付
   opusList: baseUrl + '/api/user/opus_list' // 获取用户作品列表
@@ -83,7 +83,27 @@ export const getCurrentUser = async () => {
  */
 export const createTask = async (data: any) => {
   try {
-    return await apiRequest(urlList.createTasks, 'POST', data, true);
+    try {
+      await waitForToken();
+    
+      const options: any = {
+          method: 'POST',
+          headers: createHeaders(),
+          body: data
+      };
+      console.log(`请求 POST ${urlList.createTasks}, 选项:`, options);
+      
+      try {
+        const response = await $fetch(urlList.createTasks, options);
+        return response;
+      } catch (fetchError: any) {
+        console.error(`请求失败 POST ${urlList.createTasks}:`, fetchError);
+        throw fetchError;
+      }
+    } catch (error) {
+      console.error('请求失败:', error);
+      throw error;
+    }
   } catch (error) {
     console.error('创建任务失败:', error);
     throw error;
@@ -109,9 +129,7 @@ export const payOrder = async (data: any) => {
 
 /**
  * 获取用户作品列表
- * @param data 用户作品列表数据
- * @param page 页码
- * @param page_size 每页数量
+ * @param data 分页参数
  * @returns 用户作品列表
  */
 export const getOpusList = async (data: any) => {
@@ -321,7 +339,7 @@ const createFormData = (data: Record<string, any>) => {
 const createHeaders = () => {
   const token = getValidToken();
   return {
-    'x-appid': String(useRuntimeConfig().public.appid)||'cy467b1b042e1f9efe',
+    'x-appid': String(useRuntimeConfig().public.appid)||'parkmaker',
     ...(token ? { 'Authorization': `Bearer ${token}` } : {})
   };
 }

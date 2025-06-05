@@ -12,12 +12,12 @@ export interface RouteItem {
 // 主路由配置
 export const mainRoutes: RouteItem[] = [
   { id: "hero", name: "Home", icon: "home" },
-  { id: "showcase", name: "How It Works", icon: "presentation" },
+  { id: "showcase", name: "Character Creator", icon: "presentation" },
   { id: "features", name: "Features", icon: "star" },
-  { id: "Reviews", name: "Reviews", icon: "chat" },
   { id: "pricing", name: "Pricing", icon: "tag" },
   { id: "faq", name: "FAQ", icon: "help" },
-  { id: "blog", name: "Blog", href: "/blog", icon: "book" }
+  { id: "blog", name: "Blog", href: "/blog", icon: "book" },
+  { name: "My Works", href: "/my-works", icon: "collection" }
 ]
 
 export const useNavigation = () => {

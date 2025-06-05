@@ -13,29 +13,37 @@ export default {
   theme: {
   	extend: {
   		colors: {
-        baby: {
-          pink: '#FFB6C1',
-          blue: '#87CEEB',
-          purple: '#D8BFD8',
-          mint: '#98FF98',
-          yellow: '#FFFACD',
-          peach: '#FFDAB9',
-          lavender: '#E6E6FA',
-          coral: '#FF7F50',
-          sky: '#87CEEB',
-          rose: '#FFE4E1'
+        southpark: {
+          // Main character colors
+          kenny: '#FFCC80', // Kenny's orange (softer orange)
+          stan: '#90CAF9', // Stan's blue (softer blue) // Main site text color
+          stanButton: '#1D90FF', // Stan's blue (softer blue) // Site button color
+          kyle: '#90CAF9', // Kyle's red (softer red)
+          cartman: '#BCAAA4', // Cartman's brown (softer brown)
+          // Secondary colors
+          background: '#FAFAFA', // Softer background color
+          snow: '#F38A41', // Softer snow color
+          mountain: '#FEFEFE', // Softer mountain color // First background color
+          tree: '#FFFFFF', // 更柔和的树木颜色 //第二块背景色
+          // 强调色
+          accent: '#F8BBD0', // 更柔和的粉色强调
+          highlight: '#A5D6A7', // 更柔和的绿色高亮
+          warning: '#FFCC80', // 更柔和的橙色警告
+          error: '#EF9A9A', // 更柔和的红色错误
+          // 文本颜色
+          text: {
+            primary: '#616161', // 主要文本（更柔和的深灰色）
+            secondary: '#9E9E9E', // 次要文本（更柔和的灰色）
+            light: '#F5F5F5', // 浅色文本（更柔和的白色）
+          }
         },
-  			ghibli: {
-  				green: '#3a6c2c',
-  				light: 'rgba(219, 223, 192, 0.85)'
-  			},
-  			theme: '#2563eb',
+  			theme: '#90CAF9', // 使用更柔和的斯坦蓝作为主题色
   			blue: {
-  				dark: '#1d4ed8',
-  				medium: '#2563eb',
-  				light: '#3b82f6',
-  				pale: '#f8fafc',
-  				accent: '#60a5fa'
+  				dark: '#78909C', // 更柔和的深蓝色
+  				medium: '#90CAF9', // 更柔和的斯坦蓝
+  				light: '#E1F5FE', // 更柔和的浅蓝色
+  				pale: '#E8F5E9', // 更柔和的雪地蓝
+  				accent: '#81D4FA' // 更柔和的强调蓝
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

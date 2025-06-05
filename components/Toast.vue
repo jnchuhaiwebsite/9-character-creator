@@ -1,14 +1,14 @@
 <template>
   <div
     v-if="show"
-    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 max-w-sm w-full bg-white/95 backdrop-blur-sm shadow-lg rounded-lg pointer-events-auto overflow-hidden border border-baby-pink/20"
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 max-w-sm w-full bg-white/95 backdrop-blur-sm shadow-lg rounded-lg pointer-events-auto overflow-hidden border border-southpark-snow/20"
   >
     <div class="p-4">
       <div class="flex items-center">
         <div class="flex-shrink-0">
           <svg
             v-if="type === 'success'"
-            class="h-6 w-6 text-baby-mint"
+            class="h-6 w-6 text-southpark-kenny"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -23,7 +23,7 @@
           </svg>
           <svg
             v-else-if="type === 'error'"
-            class="h-6 w-6 text-baby-coral"
+            class="h-6 w-6 text-southpark-kenny"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -38,7 +38,7 @@
           </svg>
           <svg
             v-else
-            class="h-6 w-6 text-baby-blue"
+            class="h-6 w-6 text-southpark-stan"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

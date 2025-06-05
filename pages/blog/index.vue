@@ -3,8 +3,8 @@
 
     <!-- Page title -->
     <div class="pt-32 pb-12 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold mb-2 text-baby-coral">Baby Name Generator AI Blog</h1>
-      <p class="text-gray-600">Tips, tutorials and inspiration for finding the perfect baby name using AI</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2 text-baby-coral">South Park AI Image Generator Blog</h1>
+      <p class="text-gray-600">Create unique South Park style images using AI text-to-image and image-to-image generation</p>
     </div>
     
     <div class="flex flex-col md:flex-row gap-4 md:gap-8 mb-16 mx-auto w-11/12 max-w-7xl">
@@ -64,12 +64,12 @@ import { useBlogPosts } from '~/composables/useBlogPosts'
 import { useSeo } from '~/composables/useSeo'
 
 useSeo({
-  title: "Baby Name Generator AI Blog - Tips and Inspiration",
-  description: "Your ultimate Baby Name Generator AI resource: discover creative name ideas, master name generation with tutorials, and stay updated on new features.",
-  ogTitle: "Baby Name Generator AI Blog - Tips and Inspiration",
-  ogDescription: "Your ultimate Baby Name Generator AI resource: discover creative name ideas, master name generation with tutorials, and stay updated on new features.",
-  twitterTitle: "Baby Name Generator AI Blog - Tips and Inspiration",
-  twitterDescription: "Your ultimate Baby Name Generator AI resource: discover creative name ideas, master name generation with tutorials, and stay updated on new features."
+  title: "South Park AI Image Generator - Create South Park Style Images with AI",
+  description: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation.",
+  ogTitle: "South Park AI Image Generator - Create South Park Style Images with AI",
+  ogDescription: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation.",
+  twitterTitle: "South Park AI Image Generator - Create South Park Style Images with AI",
+  twitterDescription: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation."
 });
 
 // Use blog posts data

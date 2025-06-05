@@ -4,34 +4,34 @@
       <!-- 首屏区块 -->
       <section
         id="hero"
-        class="hero-gradient-bg flex flex-col items-center justify-center min-h-[600px] relative"
+        class="flex flex-col items-center justify-center min-h-[600px] relative bg-southpark-tree"
       >
-        <HomeHero />
+        <ImageGenerator />
       </section>
 
       <!-- 展示模块 -->
-      <section id="showcase">
+      <section id="showcase" class="bg-southpark-mountain">
         <ShowcaseSection />
       </section>
 
       <!-- 关键特性模块 -->
-      <section id="features">
+      <section id="features" class="bg-southpark-tree">
         <FeaturesSection />
       </section>
 
       <!-- 用户评价模块 -->
-      <section id="Reviews">
+      <section id="Reviews" class="bg-southpark-mountain">
         <TestimonialsSection />
       </section>
       
       <!-- 定价模块 -->
-      <section id="pricing">
+      <section id="pricing" class="bg-southpark-tree">
         <PricingPlans />
       </section>
       
 
       <!-- 常见问题模块 -->
-      <section id="faq">
+      <section id="faq" class="bg-southpark-mountain">
         <FaqSection />
       </section>
 
@@ -52,7 +52,6 @@ import { useToast } from '~/composables/useToast';
 import { useSeo } from '~/composables/useSeo';
 
 import PricingPlans from "~/components/PricingPlans.vue";
-import HomeHero from "~/pages/components/HomeHero.vue";
 import FaqSection from "~/pages/components/FaqSection.vue";
 import FeaturesSection from "~/pages/components/FeaturesSection.vue";
 import TestimonialsSection from "~/pages/components/TestimonialsSection.vue";
@@ -119,10 +118,6 @@ const scrollToUpload = () => {
 </script>
 
 <style scoped>
-.hero-gradient-bg {
-  background: linear-gradient(135deg, #fef2e8 0%, #e8ecff 50%, #faf0ff 100%);
-}
-
 html {
   font-size: 18px;
 }

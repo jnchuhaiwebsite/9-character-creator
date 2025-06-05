@@ -1,7 +1,7 @@
 <template>
   <button
     @click="scrollToTop"
-    class="fixed bottom-20 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-baby-coral to-baby-purple text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-50 hover:shadow-xl"
+    class="fixed bottom-20 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-southpark-mountain/80 to-southpark-stan/80 text-southpark-text-primary shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-50 hover:shadow-xl"
     :class="{ 'opacity-0 translate-y-10 pointer-events-none': !isVisible, 'opacity-100 translate-y-0': isVisible }"
     aria-label="Back to top"
   >

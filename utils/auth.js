@@ -15,13 +15,13 @@ const authEventBus = {
     this.events[event].push(callback)
     return () => this.off(event, callback) // 返回解绑函数
   },
-  
+
   // 移除事件监听器
   off(event, callback) {
     if (!this.events[event]) return
     this.events[event] = this.events[event].filter(cb => cb !== callback)
   },
-  
+
   // 触发事件
   emit(event, data) {
     if (!this.events[event]) return
@@ -50,13 +50,14 @@ export function useClerkAuth() {
     isLoaded: false,
     isLoadFailed: false,
     isLoadTimedOut: false,
-    
+    clerkStatus: 'Waiting for initialization',
+    error: null,
+
     // 用户状态
     isLoggedIn: false,
     isCheckingAuth: true,
     
     // 状态文本
-    clerkStatus: 'Waiting for initialization',
     loginStatus: 'unknown',
     authStatus: 'Checking login status...',
     
@@ -69,7 +70,7 @@ export function useClerkAuth() {
   
   // 防止退出登录重复调用
   let isHandlingSignOut = false
-  
+
   // 用于区分是否是用户主动触发的操作
   let isUserInitiatedAction = false
 
@@ -161,7 +162,7 @@ export function useClerkAuth() {
         clearInterval(checkInterval)
       }
     }, 200)
-    
+
     // 设置超时器
     setTimeout(() => {
       if (!isLoaded.value) {
@@ -179,7 +180,7 @@ export function useClerkAuth() {
         clearInterval(checkInterval)
       }
     }, 10000)
-    
+
     // 使用try-catch捕获可能的错误
     try {
       // 其他可能的初始化代码
