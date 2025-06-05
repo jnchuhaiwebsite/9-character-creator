@@ -1,46 +1,34 @@
 <template>
-  <div id="showcase" class="py-20 bg-gradient-to-b from-baby-pink/10 to-white">
+  <div id="showcase" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Left Image Right Text -->
       <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
         <div class="w-full md:w-1/2">
           <img 
             src="/img/01.webp" 
-            alt="AI Baby Name Generator Interface - Smart Name Suggestions" 
+            alt="South Park Character Creator - Text to Image Generation" 
             class="w-full h-auto rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300"
             @error="handleImageError"
             loading="lazy"
           />
         </div>
         <div class="w-full md:w-1/2 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Smart Name Generation</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Text to Image Generation</h2>
           <p class="text-lg text-gray-600">
-            Our AI name generator uses advanced algorithms to provide personalized name suggestions. Whether you prefer traditional or modern styles, we'll help you find the perfect name.
+            Transform your ideas into South Park style characters using our advanced AI-powered text-to-image generation. Simply describe your character, and our South Park Character Creator will bring it to life.
           </p>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Multi-dimensional Filtering System</span>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Create characters by describing their appearance, clothing, and personality</span>
             </li>
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Intelligent Recommendation Algorithm</span>
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Generate multiple variations of your character with different styles</span>
             </li>
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Cross-cultural Name Database</span>
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Maintain authentic South Park art style in every generation</span>
             </li>
           </ul>
         </div>
@@ -51,7 +39,7 @@
         <div class="w-full md:w-1/2">
           <img 
             src="/img/02.webp" 
-            alt="Baby Name Meaning Analysis - AI Name Generator Features" 
+            alt="South Park Character Creator - Image to Image Transformation" 
             class="w-full h-auto rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
             @click="handleImageClick"
             @error="handleImageError"
@@ -59,34 +47,22 @@
           />
         </div>
         <div class="w-full md:w-1/2 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">In-depth Name Analysis</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Image to Image Transformation</h2>
           <p class="text-lg text-gray-600">
-            Each name is carefully analyzed to provide detailed cultural background, meaning interpretation, and style characteristics to help you make the best choice.
+            Upload your own images and transform them into South Park style characters. Our AI-powered South Park Character Creator will maintain the essence of your original image while applying the distinctive South Park art style.
           </p>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Name Meaning Analysis</span>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Convert any image into South Park style while preserving key features</span>
             </li>
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Cultural Background Introduction</span>
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Adjust style intensity to control the transformation level</span>
             </li>
-            <li class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-gradient-to-r from-baby-coral to-baby-purple rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-gray-700">Pronunciation and Writing Guide</span>
+            <li class="flex items-start">
+              <span class="text-southpark-kenny mr-2">✓</span>
+              <span>Get multiple style variations of your transformed character</span>
             </li>
           </ul>
         </div>
@@ -107,7 +83,7 @@ const handleImageError = (e: Event) => {
 }
 
 const handleImageClick = () => {
-  // 上滑到首屏表单区域
+  // Scroll to the hero form section
   const heroSection = document.getElementById('hero');
   if (heroSection) {
     heroSection.scrollIntoView({ behavior: 'smooth' });

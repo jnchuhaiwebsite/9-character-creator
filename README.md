@@ -109,4 +109,4 @@ yarn postinstall
 ## 授权协议
 
 © 2023-2024 Black Cross Background Remover - 保留所有权利
-网站: https://www.genbabyname.com
+网站: https://www.genparkmaker.com

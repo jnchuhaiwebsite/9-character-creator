@@ -9,23 +9,23 @@
       </NuxtLink>
     </div>
     
-    <h1 class="text-3xl font-bold mb-8">baby name generator ai - Privacy Policy</h1>
+    <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
     
     <div class="space-y-6">
       <section>
         <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
-        <p class="text-gray-700">Welcome to our baby name generator ai service. This privacy policy explains how we collect, use, store, and protect your personal information while using our baby name generation technology. We value your privacy and are committed to transparently handling your data.</p>
+        <p class="text-gray-700">Welcome to our South Park Character Creator service. This privacy policy explains how we collect, use, store, and protect your personal information. We value your privacy and are committed to transparently handling your data.</p>
       </section>
 
       <section>
         <h2 class="text-2xl font-semibold mb-4">Information Collection</h2>
-        <p class="text-gray-700">When using our baby name generator service, we may collect the following types of information:</p>
+        <p class="text-gray-700">When using our services, we may collect the following types of information:</p>
         <ul class="list-disc pl-6 mt-4 space-y-2">
           <li><strong>Account Information</strong>: When you register an account, we collect your email address and login credentials.</li>
-          <li><strong>Name Preferences</strong>: Your selected gender, style, origin, and other preferences for baby name generation.</li>
-          <li><strong>Usage Data</strong>: How you interact with our baby name generator, when you access it, which features you use, and the names you generate.</li>
+          <li><strong>User Content</strong>: This includes character preferences and customization options you provide for generating South Park style characters.</li>
+          <li><strong>Usage Data</strong>: How you interact with the service, when you access it, which features you use, and the characters you generate.</li>
           <li><strong>Device Information</strong>: Browser type, IP address, device type, operating system, and other technical identifiers.</li>
-          <li><strong>Payment Information</strong>: If you purchase our premium services, we collect necessary payment information (we do not directly store your complete payment card information).</li>
+          <li><strong>Payment Information</strong>: If you purchase our paid services, we collect necessary payment information (we do not directly store your complete payment card information).</li>
         </ul>
       </section>
 
@@ -33,8 +33,8 @@
         <h2 class="text-2xl font-semibold mb-4">Information Usage</h2>
         <p class="text-gray-700">We use the collected information to:</p>
         <ul class="list-disc pl-6 mt-4 space-y-2">
-          <li>Provide, maintain, and improve our baby name generation service</li>
-          <li>Generate personalized baby name suggestions based on your preferences</li>
+          <li>Provide, maintain, and improve our South Park Character Creator service</li>
+          <li>Process your requests and generate characters that match your preferences</li>
           <li>Manage your account and provide customer support</li>
           <li>Send service-related notifications and updates</li>
           <li>Prevent fraudulent activities and enhance security</li>
@@ -45,12 +45,11 @@
 
       <section>
         <h2 class="text-2xl font-semibold mb-4">AI Technology Usage</h2>
-        <p class="text-gray-700">Our service uses artificial intelligence technology to generate personalized baby name suggestions. Please note:</p>
+        <p class="text-gray-700">Our service uses artificial intelligence technology to create South Park style characters based on your preferences. Please note:</p>
         <ul class="list-disc pl-6 mt-4 space-y-2">
-          <li>Your preferences are used by our AI system to generate relevant name suggestions</li>
-          <li>Generated names may be used as anonymous data to improve our systems</li>
+          <li>Your character preferences are submitted to our AI system for processing</li>
+          <li>AI-generated characters may be used as anonymous data to improve our systems</li>
           <li>We do not associate your personal identity with data used for training purposes</li>
-          <li>We offer various name generation options and customization features</li>
         </ul>
       </section>
 
@@ -97,29 +96,27 @@
       <section>
         <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
         <p class="text-gray-700">If you have any questions or concerns about our Privacy Policy, please contact us:</p>
-        <p class="text-gray-700 mt-2">Email:ceo@ghiblimagicmaker.com</p>
+        <p class="text-gray-700 mt-2">Email: ceo@ghiblimagicmaker.com</p>
       </section>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useHead,useRequestURL } from 'nuxt/app'
+import { useHead, useSeoMeta } from 'nuxt/app';
 
-const url = useRequestURL();
-const baseUrl = url.origin;
-
-// @ts-ignore: Nuxt宏函数
+// @ts-ignore: Nuxt macro function
 definePageMeta({
   layout: false,
   name: 'privacy-policy'
 })
 
 useHead({
-  title: 'baby name generator ai | Privacy Policy',
-  meta: [
-    { name: 'description', content: 'baby name generator ai Privacy Policy: Learn how we protect your data while using our baby name generation service, including name preferences and data security.' },
-  ],
-  link: [{ rel: 'canonical', href: `${baseUrl}/subsidiary/privacy-policy` }]
+  link: [{ rel: 'canonical', href: 'https://www.southparkai.com/subsidiary/privacy-policy' }],
+})
+
+useSeoMeta({
+  title: 'South Park Character Creator | Privacy Policy',
+  description: 'South Park Character Creator Privacy Policy: Data Collection, Usage, Sharing, Security, and Your Rights',
 })
 </script> 

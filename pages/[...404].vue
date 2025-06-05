@@ -1,8 +1,8 @@
 <template>
   <div class="error-container">
     <h1 class="error-title">404</h1>
-    <h2 class="error-message">Page Not Found - baby name generator ai</h2>
-    <p class="error-submessage">The page you're looking for doesn't exist. Return to our baby name generator ai to find the perfect name for your little one.</p>
+    <h2 class="error-message">Page Not Found - South Park Character Creator</h2>
+    <p class="error-submessage">The page you're looking for doesn't exist. Return to our South Park Character Creator to design your own unique South Park style character.</p>
     <div class="action-buttons">
       <NuxtLink to="/" class="back-home-link">Back to Home</NuxtLink>
     </div>
@@ -13,11 +13,11 @@
 import { useHead } from 'nuxt/app';
 
 useHead({
-  title: 'Page Not Found - baby name generator ai',
+  title: 'Page Not Found - South Park Character Creator',
   meta: [
     {
       name: 'description',
-      content: 'Sorry, the page you requested does not exist. Return to our baby name generator ai to find unique and meaningful names for your baby.'
+      content: 'Sorry, the page you requested does not exist. Return to our South Park Character Creator to design your own unique South Park style character.'
     },
     { name: 'robots', content: 'noindex, nofollow' }
   ]

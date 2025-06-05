@@ -15,11 +15,11 @@
 <style>
 /* 主题色 */
 :root {
-  /* 主题色 - 蓝色 */
-  --theme-primary: #ff7f50;
-  --theme-primary-hover: #fa8f68;
-  --theme-primary-light: rgba(37, 99, 235, 0.1);
-  --theme-primary-medium: rgba(37, 99, 235, 0.2);
+  /* 主题色 - South Park风格 */
+  --theme-primary: #ff6b6b;
+  --theme-primary-hover: #ff5252;
+  --theme-primary-light: rgba(255, 107, 107, 0.1);
+  --theme-primary-medium: rgba(255, 107, 107, 0.2);
   
   /* 文字颜色 */
   --text-primary: #1e293b;

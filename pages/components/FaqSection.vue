@@ -1,32 +1,32 @@
 <template>
-  <div id="faq" class="relative w-full py-16 bg-gradient-to-b from-white via-[#f3efff] to-white" aria-labelledby="faq-heading">
+  <div class="relative w-full py-16 bg-southpark-mountain" aria-labelledby="faq-heading">
     <!-- 标题 -->
     <div class="max-w-7xl mx-auto px-4">
-      <h2 id="faq-heading" class="text-3xl font-bold text-center mb-12 text-baby-coral">Frequently Asked Questions</h2>
+      <h2 id="faq-heading" class="text-3xl font-bold text-center mb-12 text-southpark-stan">Frequently Asked Questions</h2>
       
       <!-- 问题列表 -->
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
         <div 
           v-for="(item, index) in faqItems" 
           :key="index"
-          class="border-b border-gray-200 py-6"
+          class="border-b border-gray-200 py-6 last:border-b-0"
         >
           <!-- 问题标题（可点击切换展开/折叠） -->
           <div 
-            class="w-full text-left flex justify-between items-center cursor-pointer" 
+            class="w-full text-left flex justify-between items-center cursor-pointer hover:bg-southpark-snow rounded-lg px-4 py-2 transition-colors duration-200" 
             @click="toggleItem(index)"
             :aria-expanded="openItems[index]"
             :aria-controls="`faq-answer-${index}`"
           >
-            <h3 class="text-lg text-gray-800 font-medium flex items-center">
-              <svg class="w-5 h-5 mr-2 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <h3 class="text-lg text-southpark-text-primary font-medium flex items-center">
+              <svg class="w-5 h-5 mr-2 text-southpark-stan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
               </svg>
               {{ item.question }}
             </h3>
             <!-- 箭头图标（根据展开状态旋转） -->
             <svg 
-              class="w-5 h-5 text-gray-500 transform transition-transform duration-200" 
+              class="w-5 h-5 text-southpark-stan transform transition-transform duration-200" 
               :class="{'rotate-180': openItems[index]}"
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 20 20" 
@@ -40,7 +40,7 @@
           <!-- 问题答案（展开时显示） -->
           <div 
             v-show="openItems[index]"
-            class="mt-3 text-gray-600 overflow-hidden transition-all duration-300"
+            class="mt-3 overflow-hidden transition-all duration-300 px-4"
             :id="`faq-answer-${index}`"
           >
             <p>{{ item.answer }}</p>
@@ -53,14 +53,14 @@
         <div 
           @click="showMore"
           v-if="hasMoreItems"
-          class="bg-gradient-to-r from-baby-coral to-baby-purple hover:shadow-xl text-white font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer inline-block"
+          class="bg-southpark-stanButton text-white hover:shadow-xl text-southpark-text-light font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer inline-block"
         >
           Show More
         </div>
         <div 
           @click="showLess"
           v-else-if="visibleCount > initialVisibleCount"
-          class="bg-gradient-to-r from-baby-coral to-baby-purple hover:shadow-xl text-white font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer inline-block"
+          class="bg-southpark-stanButton text-white hover:shadow-xl text-southpark-text-light font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer inline-block"
         >
           Show Less
         </div>
@@ -76,57 +76,45 @@ defineOptions({
   name: 'FaqSection'
 })
 
-// FAQ数据
-const allFaqItems = [
+// FAQ data
+const faqs = [
   {
-    question: 'What is GenBabyName AI Baby Name Generator?',
-    answer: 'GenBabyName is an innovative AI-powered tool that suggests unique and meaningful baby names based on your preferences and criteria. Our advanced algorithm analyzes cultural, historical, and linguistic patterns to provide personalized name recommendations.'
+    question: 'How do I generate images using prompts?',
+    answer: 'Simply enter descriptive text prompts in the input box, such as "a South Park style character wearing a red hat" or "a cartoon character in a blue jacket". Our AI system will generate unique character images in the South Park style based on your description.'
   },
   {
-    question: 'How does GenBabyName work?',
-    answer: 'Finding the perfect name is simple with GenBabyName. We take your inputs for gender, desired attributes, and any exclusions you specify. Our tailored AI prompt then analyzes these preferences along with cultural significance, pronunciation, and family traditions to generate personalized name suggestions that match your criteria perfectly.'
+    question: 'How can I upload reference images?',
+    answer: 'You can upload reference images by clicking the upload button or dragging and dropping images into the designated area. We support JPG, PNG, and WebP formats. After uploading, the system will analyze the image and generate a similar character in the South Park style.'
   },
   {
-    question: 'How easy is it to use GenBabyName?',
-    answer: 'Our AI baby name generator is designed to be user-friendly and intuitive. Just enter some details about your preferences and family background, and you\'ll effortlessly discover suitable baby names that match your criteria.'
+    question: 'How long does it take to generate an image?',
+    answer: 'The generation process typically takes 15-30 seconds, depending on the complexity of the image and server load. You can see a real-time progress bar during the generation process.'
   },
   {
-    question: 'Why choose GenBabyName AI Generator?',
-    answer: 'Our AI goes beyond generic name lists by analyzing cultural, historical, and linguistic patterns to suggest meaningful and unique names. With GenBabyName, you get an intuitive interface, extensive customization options, and privacy assurance.'
+    question: 'What aspects of the generated images can I customize?',
+    answer: 'You can customize multiple aspects of the character, including: clothing style, accessories, hairstyle, facial expressions, and poses. Through detailed prompt descriptions, you can achieve results that better match your expectations.'
   },
   {
-    question: 'What customization options are available?',
-    answer: 'GenBabyName offers various customization options including cultural preferences, name meanings, length preferences. You can also specify gender and origin preferences.'
-  },
-  {
-    question: 'How does the AI generate personalized name suggestions?',
-    answer: 'Our AI analyzes your preferences, cultural background, and specified criteria to generate personalized name suggestions. It considers factors like name meanings, popularity trends, cultural significance, and linguistic patterns to provide relevant recommendations.'
-  },
-  {
-    question: 'Does GenBabyName consider name popularity trends?',
-    answer: 'Yes, our AI takes into account current name popularity trends while also suggesting unique alternatives. You can specify whether you prefer trending names or more distinctive options, helping you make an informed decision.'
-  },
-  {
-    question: 'Can I get name meanings and origins for the suggestions?',
-    answer: 'Absolutely! Each name suggestion comes with detailed information about its meaning, origin, cultural significance, and historical context. This helps you understand the deeper significance of each name option.'
+    question: 'What can I use the generated images for?',
+    answer: 'Generated images can be used for personal purposes, such as social media sharing and personal collections. For commercial use, please refer to our terms of service or contact customer service for commercial licensing.'
   }
-];
+]
 
 // 初始显示的FAQ数量
 const initialVisibleCount = 4;
 const visibleCount = ref(initialVisibleCount);
 
 // 跟踪每个FAQ项的展开状态
-const openItems = ref(Array(allFaqItems.length).fill(false));
+const openItems = ref(Array(faqs.length).fill(false));
 
 // 当前显示的FAQ项目
 const faqItems = computed(() => {
-  return allFaqItems.slice(0, visibleCount.value);
+  return faqs.slice(0, visibleCount.value);
 });
 
 // 是否还有更多FAQ可显示
 const hasMoreItems = computed(() => {
-  return visibleCount.value < allFaqItems.length;
+  return visibleCount.value < faqs.length;
 });
 
 // 切换FAQ项的展开/折叠状态
@@ -136,7 +124,7 @@ const toggleItem = (index: number) => {
 
 // 显示更多FAQ
 const showMore = () => {
-  visibleCount.value = allFaqItems.length;
+  visibleCount.value = faqs.length;
 };
 
 // 显示较少FAQ

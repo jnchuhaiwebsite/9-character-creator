@@ -4,34 +4,34 @@
       <!-- 首屏区块 -->
       <section
         id="hero"
-        class="hero-gradient-bg flex flex-col items-center justify-center min-h-[600px] relative"
+        class="flex flex-col items-center justify-center min-h-[600px] relative bg-southpark-tree"
       >
-        <HomeHero />
+        <ImageGenerator />
       </section>
 
       <!-- 展示模块 -->
-      <section id="showcase">
+      <section id="showcase" class="bg-southpark-mountain">
         <ShowcaseSection />
       </section>
 
       <!-- 关键特性模块 -->
-      <section id="features">
+      <section id="features" class="bg-southpark-tree">
         <FeaturesSection />
       </section>
 
       <!-- 用户评价模块 -->
-      <section id="Reviews">
+      <section id="Reviews" class="bg-southpark-mountain">
         <TestimonialsSection />
       </section>
       
       <!-- 定价模块 -->
-      <section id="pricing">
+      <section id="pricing" class="bg-southpark-tree">
         <PricingPlans />
       </section>
       
 
       <!-- 常见问题模块 -->
-      <section id="faq">
+      <section id="faq" class="bg-southpark-mountain">
         <FaqSection />
       </section>
 
@@ -52,7 +52,6 @@ import { useToast } from '~/composables/useToast';
 import { useSeo } from '~/composables/useSeo';
 
 import PricingPlans from "~/components/PricingPlans.vue";
-import HomeHero from "~/pages/components/HomeHero.vue";
 import FaqSection from "~/pages/components/FaqSection.vue";
 import FeaturesSection from "~/pages/components/FeaturesSection.vue";
 import TestimonialsSection from "~/pages/components/TestimonialsSection.vue";
@@ -61,12 +60,12 @@ import ShowcaseSection from "~/pages/components/ShowcaseSection.vue";
 const { toast, showToast } = useToast();
 
 useSeo({
-  title: "baby name generator ai - Find Perfect Names for Your Baby",
-  description: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one.",
-  ogTitle: "baby name generator ai - Find Perfect Names for Your Baby",
-  ogDescription: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one.",
-  twitterTitle: "baby name generator ai - Find Perfect Names for Your Baby",
-  twitterDescription: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one."
+  title: "South Park Character Creator - Create Your Own South Park Style Character",
+  description: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images.",
+  ogTitle: "South Park Character Creator - Create Your Own South Park Style Character",
+  ogDescription: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images.",
+  twitterTitle: "South Park Character Creator - Create Your Own South Park Style Character",
+  twitterDescription: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images."
 });
 
 // 处理支付回调
@@ -92,9 +91,9 @@ onBeforeMount(() => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "baby name generator ai",
-    description: "baby name generator ai that helps parents find the perfect name for their baby. Features include gender selection, name style, cultural origin, and name length preferences.",
-    applicationCategory: "NameGeneratorApplication",
+    name: "South Park Character Creator",
+    description: "AI-powered South Park Character Creator that helps users create unique South Park style characters. Features include text-to-image generation and image-to-image transformation.",
+    applicationCategory: "ImageGeneratorApplication",
     operatingSystem: "All",
     offers: {
       "@type": "Offer",
@@ -119,10 +118,6 @@ const scrollToUpload = () => {
 </script>
 
 <style scoped>
-.hero-gradient-bg {
-  background: linear-gradient(135deg, #fef2e8 0%, #e8ecff 50%, #faf0ff 100%);
-}
-
 html {
   font-size: 18px;
 }
