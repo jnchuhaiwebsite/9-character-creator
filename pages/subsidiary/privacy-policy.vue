@@ -96,7 +96,7 @@
       <section>
         <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
         <p class="text-gray-700">If you have any questions or concerns about our Privacy Policy, please contact us:</p>
-        <p class="text-gray-700 mt-2">Email: ceo@ghiblimagicmaker.com</p>
+        <p class="text-gray-700 mt-2">Email: support@southparkai.com</p>
       </section>
     </div>
   </div>

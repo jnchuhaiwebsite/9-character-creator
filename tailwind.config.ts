@@ -24,7 +24,7 @@ export default {
           background: '#FAFAFA', // Softer background color
           snow: '#F38A41', // Softer snow color
           mountain: '#FEFEFE', // Softer mountain color // First background color
-          tree: '#FFFFFF', // 更柔和的树木颜色 //第二块背景色
+          tree: '#f3f4f6', // 更柔和的树木颜色 //第二块背景色
           // 强调色
           accent: '#F8BBD0', // 更柔和的粉色强调
           highlight: '#A5D6A7', // 更柔和的绿色高亮

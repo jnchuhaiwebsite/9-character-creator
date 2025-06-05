@@ -15,7 +15,7 @@
         <div class="w-full md:w-1/2 space-y-6">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Text to Image Generation</h2>
           <p class="text-lg text-gray-600">
-            Transform your ideas into South Park style characters using our advanced AI-powered text-to-image generation. Simply describe your character, and our South Park Character Creator will bring it to life.
+            Transform your ideas into South Park style characters using our advanced AI-powered text-to-image generation. Simply describe your character
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
@@ -53,16 +53,8 @@
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
-              <span class="text-southpark-kenny mr-2">✓</span>
+              <!-- <span class="text-southpark-kenny mr-2">✓</span> -->
               <span>Convert any image into South Park style while preserving key features</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Adjust style intensity to control the transformation level</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Get multiple style variations of your transformed character</span>
             </li>
           </ul>
         </div>
