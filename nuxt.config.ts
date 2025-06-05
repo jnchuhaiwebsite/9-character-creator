@@ -26,15 +26,15 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en' // 设置 HTML 语言
       },
-      title: 'South Park Character Creator - Create Your Own South Park Character', // 网站标题
+      title: 'South Park Character Creator - Create Your Own South Park Style Character', // 网站标题
       meta: [
         { charset: 'utf-8' }, // 字符集
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }, // 移动端视口设置
-        { name: 'description', content: 'Create your own South Park character with our AI-powered character creator. Design unique South Park style characters with custom features, outfits, and accessories.' }, // 网站描述
-        { name: 'keywords', content: 'south park character creator, south park maker, create south park character, south park avatar maker, south park style generator' }
+        { name: 'description', content: 'Create your own South Park character with our AI-powered South Park Character Creator. Design unique South Park style characters with custom features, outfits, and accessories.' }, // 网站描述
+        { name: 'keywords', content: 'south park character creator, south park maker, create south park character, south park avatar maker, south park style generator, south park character generator' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://www.southparkcreator.com' }, // 规范链接
+        { rel: 'canonical', href: 'https://https://www.southparkai.com' }, // 规范链接
         // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'x-default' }, // 默认语言版本
         // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'en' }, // 英文版本
       ],

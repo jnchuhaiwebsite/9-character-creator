@@ -79,24 +79,24 @@ defineOptions({
 // FAQ data
 const faqs = [
   {
-    question: 'What is South Park Character Creator?',
-    answer: 'South Park Character Creator is an innovative AI-driven tool that allows you to create unique South Park style characters. Our advanced algorithm generates characters that match the distinctive art style of South Park, including custom features, clothing, and accessories.'
+    question: 'How do I generate images using prompts?',
+    answer: 'Simply enter descriptive text prompts in the input box, such as "a South Park style character wearing a red hat" or "a cartoon character in a blue jacket". Our AI system will generate unique character images in the South Park style based on your description.'
   },
   {
-    question: 'How does the character generation work?',
-    answer: 'Our AI uses advanced machine learning models trained on South Park\'s unique art style. You can create characters using text prompts or by uploading reference images. The system will generate characters that maintain the iconic South Park look while incorporating your custom elements.'
+    question: 'How can I upload reference images?',
+    answer: 'You can upload reference images by clicking the upload button or dragging and dropping images into the designated area. We support JPG, PNG, and WebP formats. After uploading, the system will analyze the image and generate a similar character in the South Park style.'
   },
   {
-    question: 'Can I use the generated characters commercially?',
-    answer: 'Please refer to our Terms of Service for detailed information about usage rights. Generally, personal use is free, while commercial usage may require additional authorization or subscription to the appropriate commercial plan.'
+    question: 'How long does it take to generate an image?',
+    answer: 'The generation process typically takes 15-30 seconds, depending on the complexity of the image and server load. You can see a real-time progress bar during the generation process.'
   },
   {
-    question: 'What file formats are supported for image uploads?',
-    answer: 'We support common image formats including JPG, PNG, and WebP. For best results, we recommend using high-quality images with clear details.'
+    question: 'What aspects of the generated images can I customize?',
+    answer: 'You can customize multiple aspects of the character, including: clothing style, accessories, hairstyle, facial expressions, and poses. Through detailed prompt descriptions, you can achieve results that better match your expectations.'
   },
   {
-    question: 'How long does it take to generate a character?',
-    answer: 'Character generation typically takes 10-30 seconds, depending on the complexity of your request and server load. You\'ll see a progress indicator during generation.'
+    question: 'What can I use the generated images for?',
+    answer: 'Generated images can be used for personal purposes, such as social media sharing and personal collections. For commercial use, please refer to our terms of service or contact customer service for commercial licensing.'
   }
 ]
 

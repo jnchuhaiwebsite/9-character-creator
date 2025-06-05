@@ -64,12 +64,12 @@ import { useBlogPosts } from '~/composables/useBlogPosts'
 import { useSeo } from '~/composables/useSeo'
 
 useSeo({
-  title: "South Park AI Image Generator - Create South Park Style Images with AI",
-  description: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation.",
-  ogTitle: "South Park AI Image Generator - Create South Park Style Images with AI",
-  ogDescription: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation.",
-  twitterTitle: "South Park AI Image Generator - Create South Park Style Images with AI",
-  twitterDescription: "Transform your ideas into South Park style images using our advanced AI image generator. Create unique characters and scenes with text-to-image and image-to-image generation."
+  title: "South Park Character Creator Blog - Tips and Tutorials",
+  description: "Explore our South Park Character Creator blog for tips, tutorials, and inspiration on creating unique South Park style characters. Learn how to use our AI-powered character creator effectively.",
+  ogTitle: "South Park Character Creator Blog - Tips and Tutorials",
+  ogDescription: "Explore our South Park Character Creator blog for tips, tutorials, and inspiration on creating unique South Park style characters. Learn how to use our AI-powered character creator effectively.",
+  twitterTitle: "South Park Character Creator Blog - Tips and Tutorials",
+  twitterDescription: "Explore our South Park Character Creator blog for tips, tutorials, and inspiration on creating unique South Park style characters. Learn how to use our AI-powered character creator effectively."
 });
 
 // Use blog posts data

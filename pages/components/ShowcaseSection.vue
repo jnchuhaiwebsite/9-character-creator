@@ -6,29 +6,29 @@
         <div class="w-full md:w-1/2">
           <img 
             src="/img/01.webp" 
-            alt="South Park Character Creator Interface - Smart Character Generation" 
+            alt="South Park Character Creator - Text to Image Generation" 
             class="w-full h-auto rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300"
             @error="handleImageError"
             loading="lazy"
           />
         </div>
         <div class="w-full md:w-1/2 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Smart Character Generation</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Text to Image Generation</h2>
           <p class="text-lg text-gray-600">
-            Our AI character generator uses advanced algorithms to provide personalized character creation suggestions. Whether you prefer traditional or modern styles, we can help you create the perfect South Park style character.
+            Transform your ideas into South Park style characters using our advanced AI-powered text-to-image generation. Simply describe your character, and our South Park Character Creator will bring it to life.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Multi-dimensional character customization system to meet your personalized needs</span>
+              <span>Create characters by describing their appearance, clothing, and personality</span>
             </li>
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Smart prompt recommendation algorithm for optimal creation suggestions</span>
+              <span>Generate multiple variations of your character with different styles</span>
             </li>
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Rich character style library for creating unique character images</span>
+              <span>Maintain authentic South Park art style in every generation</span>
             </li>
           </ul>
         </div>
@@ -39,7 +39,7 @@
         <div class="w-full md:w-1/2">
           <img 
             src="/img/02.webp" 
-            alt="South Park Character Analysis - AI Character Generator Features" 
+            alt="South Park Character Creator - Image to Image Transformation" 
             class="w-full h-auto rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer"
             @click="handleImageClick"
             @error="handleImageError"
@@ -47,22 +47,22 @@
           />
         </div>
         <div class="w-full md:w-1/2 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">In-depth Character Analysis</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Image to Image Transformation</h2>
           <p class="text-lg text-gray-600">
-            Each character undergoes careful analysis, providing detailed style features, scene adaptation, and personalized suggestions to help you create the perfect South Park style character that meets your expectations.
+            Upload your own images and transform them into South Park style characters. Our AI-powered South Park Character Creator will maintain the essence of your original image while applying the distinctive South Park art style.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Character style analysis to ensure South Park authenticity</span>
+              <span>Convert any image into South Park style while preserving key features</span>
             </li>
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Scene adaptation suggestions to better integrate characters into stories</span>
+              <span>Adjust style intensity to control the transformation level</span>
             </li>
             <li class="flex items-start">
               <span class="text-southpark-kenny mr-2">✓</span>
-              <span>Personalized customization guidance for unique character creation</span>
+              <span>Get multiple style variations of your transformed character</span>
             </li>
           </ul>
         </div>

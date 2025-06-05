@@ -60,12 +60,12 @@ import ShowcaseSection from "~/pages/components/ShowcaseSection.vue";
 const { toast, showToast } = useToast();
 
 useSeo({
-  title: "baby name generator ai - Find Perfect Names for Your Baby",
-  description: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one.",
-  ogTitle: "baby name generator ai - Find Perfect Names for Your Baby",
-  ogDescription: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one.",
-  twitterTitle: "baby name generator ai - Find Perfect Names for Your Baby",
-  twitterDescription: "AI-powered baby name generator offering personalized suggestions based on gender, style and origin. Find meaningful names for your little one."
+  title: "South Park Character Creator - Create Your Own South Park Style Character",
+  description: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images.",
+  ogTitle: "South Park Character Creator - Create Your Own South Park Style Character",
+  ogDescription: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images.",
+  twitterTitle: "South Park Character Creator - Create Your Own South Park Style Character",
+  twitterDescription: "Create unique South Park style characters with our AI-powered South Park Character Creator. Transform your ideas into South Park style images using text prompts or upload your own images."
 });
 
 // 处理支付回调
@@ -91,9 +91,9 @@ onBeforeMount(() => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "baby name generator ai",
-    description: "baby name generator ai that helps parents find the perfect name for their baby. Features include gender selection, name style, cultural origin, and name length preferences.",
-    applicationCategory: "NameGeneratorApplication",
+    name: "South Park Character Creator",
+    description: "AI-powered South Park Character Creator that helps users create unique South Park style characters. Features include text-to-image generation and image-to-image transformation.",
+    applicationCategory: "ImageGeneratorApplication",
     operatingSystem: "All",
     offers: {
       "@type": "Offer",

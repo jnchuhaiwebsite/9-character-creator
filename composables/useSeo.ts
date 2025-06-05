@@ -24,7 +24,13 @@ export function useSeo(options: SeoOptions) {
   // 确保描述在140-160个字符之间
   let description = options.description
   if (description.length < 140) {
-    description = description + ' - Create unique South Park style characters with our AI-powered character generator.'
+    const suffix = ' - Create unique South Park style characters with our AI-powered character generator.'
+    // 确保拼接后的总长度不超过160
+    const maxPrefixLength = 160 - suffix.length
+    if (description.length > maxPrefixLength) {
+      description = description.substring(0, maxPrefixLength - 3) + '...'
+    }
+    description = description + suffix
   } else if (description.length > 160) {
     description = description.substring(0, 157) + '...'
   }
