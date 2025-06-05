@@ -1,5 +1,6 @@
 <template>
-  <div class="text-center px-4 py-12 pt-32">
+  <!-- 标题 -->
+  <div class="text-center px-4 py-8 pt-24">
       <h1 class="text-4xl md:text-5xl font-bold text-southpark-stan mb-4 text-center animate-float flex justify-center">
         South Park Character Creator - AI Character Generator
       </h1>
@@ -7,15 +8,16 @@
         Create unique South Park style characters with our AI character generator. Generate your own custom South Park character using text prompts or image references.
       </h2>
     </div>
-  <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto mt-12">
+    <!-- 生成图片 -->
+  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16">
     <!-- 左侧表单区域 -->
-    <div class="md:w-1/2 w-full md:pr-8 flex flex-col justify-between min-h-[420px]">
+    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px]">
       <!-- Mode Toggle -->
       <div class="flex items-center mb-4">
         <button
           @click="mode = 't2i'"
           :class="[
-            'px-4 py-2 rounded-l-lg transition-colors',
+            'px-3 sm:px-4 py-2 rounded-l-lg transition-colors text-sm sm:text-base',
             mode === 't2i'
               ? 'bg-southpark-stan text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -26,7 +28,7 @@
         <button
           @click="mode = 'i2i'"
           :class="[
-            'px-4 py-2 rounded-r-lg transition-colors',
+            'px-3 sm:px-4 py-2 rounded-r-lg transition-colors text-sm sm:text-base',
             mode === 'i2i'
               ? 'bg-southpark-stan text-white'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -36,29 +38,37 @@
         </button>
       </div>
       <!-- Text to Image Form -->
-      <div v-if="mode === 't2i'" class="mb-4">
-        <div class="relative">
-          <label class="block text-sm font-medium text-gray-700 mb-2">Prompt</label>
-          <button
-            @click="() => selectPresetPrompt()"
-            class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center"
-          >
-            <img src="/img/msb.png" alt="Preset Prompts" class="w-6 h-6 hover:opacity-80 transition-opacity" />
-          </button>
-          <textarea
-            v-model="prompt"
-            rows="8"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-southpark-stan min-h-[160px]"
-            placeholder="Enter your image description..."
-          ></textarea>
+      <div v-if="mode === 't2i'" class="flex-1 h-[350px]">
+        <div class="relative h-full">
+          <div class="flex flex-col gap-2 h-full">
+            <div class="flex justify-between items-center mb-2">
+              <label class="block text-sm font-medium text-gray-700">Prompt</label>
+              <button
+                class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all flex items-center gap-1 text-xs sm:text-sm font-medium shadow-sm"
+                @click="() => selectPresetPrompt()"
+                type="button"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-3 h-3 sm:w-4 sm:h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"></path>
+                </svg>
+                Examples
+              </button>
+            </div>
+            <textarea
+              v-model="prompt"
+              rows="8"
+              class="w-full h-[200px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-southpark-stan text-sm sm:text-base"
+              placeholder="Enter your image description..."
+            ></textarea>
+          </div>
         </div>
       </div>
       <!-- Image to Image Form -->
-      <div v-else class="mb-4">
-        <div>
+      <div v-else class="flex-1 h-[350px]">
+        <div class="h-full">
           <label class="block text-sm font-medium text-gray-700 mb-2">Upload Reference Image</label>
           <div
-            class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center min-h-[160px] flex items-center justify-center"
+            class="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center h-[200px] flex items-center justify-center"
             @dragover.prevent
             @drop.prevent="handleImageDrop"
           >
@@ -70,7 +80,7 @@
               @change="handleFileSelect"
             />
             <div v-if="!referenceImage" class="space-y-2">
-              <div class="text-gray-500">
+              <div class="text-gray-500 text-sm sm:text-base">
                 Drag and drop image here or
                 <button
                   @click="handleFileInputClick"
@@ -80,10 +90,10 @@
                 </button>
               </div>
             </div>
-            <div v-else class="relative">
+            <div v-else class="relative w-full h-full">
               <img
                 :src="previewUrl"
-                class="max-h-64 mx-auto rounded-lg"
+                class="max-w-full max-h-full object-contain mx-auto rounded-lg"
                 alt="Reference image"
               />
               <button
@@ -92,7 +102,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="h-4 w-4 sm:h-5 sm:w-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -108,51 +118,53 @@
         </div>
       </div>
       <!-- Generate button -->
-      <div class="mt-2 flex flex-col items-center">
+      <div class="mt-8 flex flex-col items-center">
         <button
           @click="generateImage"
-          class="w-40 bg-southpark-stan text-white py-3 px-4 rounded-md hover:bg-southpark-stan/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          class="w-32 sm:w-40 bg-southpark-stan text-white py-2 sm:py-3 px-3 sm:px-4 rounded-md hover:bg-southpark-stan/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-sm sm:text-base"
           :disabled="isGenerating || !canGenerate"
         >
-          <span v-if="isGenerating" class="animate-spin mr-2 h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
+          <span v-if="isGenerating" class="animate-spin mr-2 h-4 w-4 sm:h-5 sm:w-5 border-2 border-white border-t-transparent rounded-full"></span>
           {{ isGenerating ? 'Loading' : 'Generate' }}
         </button>
         <div v-if="isGenerating" class="w-full mt-4">
-          <div class="w-full bg-gray-200 rounded-full h-2.5">
-            <div class="bg-southpark-stan h-2.5 rounded-full transition-all duration-300" :style="{ width: `${progress}%` }"></div>
+          <div class="w-full bg-gray-200 rounded-full h-2 sm:h-2.5">
+            <div class="bg-southpark-stan h-2 sm:h-2.5 rounded-full transition-all duration-300" :style="{ width: `${progress}%` }"></div>
           </div>
-          <p class="text-gray-600 text-sm mt-1">{{ progress }}%</p>
+          <p class="text-gray-600 text-xs sm:text-sm mt-1 text-center">{{ progress }}%</p>
         </div>
       </div>
     </div>
     <!-- 右侧预览区域 -->
-    <div class="md:w-1/2 w-full flex flex-col items-center justify-center mt-8 md:mt-0">
-      <div class="w-full aspect-square bg-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden min-h-[320px]">
-        <img
-          v-if="generatedImageUrl"
-          :src="generatedImageUrl"
-          class="object-contain w-full h-full transition-opacity duration-300 rounded-xl"
-          alt="Generated image"
-          @load="isImageLoaded = true"
-          @error="isImageLoaded = false"
-        />
-        <img
-          v-else
-          src="/img/demo.webp"
-          class="object-contain w-full h-full rounded-xl"
-          alt="Demo image"
-        />
-        <div v-if="generatedImageUrl && !isImageLoaded" class="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-xl">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-southpark-stan"></div>
+    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0">
+      <div class="w-full aspect-[1/1] max-h-[400px] bg-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden">
+        <div class="w-full h-full flex items-center justify-center">
+          <img
+            v-if="generatedImageUrl"
+            :src="generatedImageUrl"
+            class="max-w-full max-h-full object-contain transition-opacity duration-300"
+            alt="Generated image"
+            @load="isImageLoaded = true"
+            @error="isImageLoaded = false"
+          />
+          <img
+            v-else
+            src="/img/demo.webp"
+            class="max-w-full max-h-full object-contain"
+            alt="Demo image"
+          />
+        </div>
+        <div v-if="generatedImageUrl && !isImageLoaded" class="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div class="animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-southpark-stan"></div>
         </div>
       </div>
       <div class="flex w-full justify-center gap-4 mt-4">
         <button
           v-if="generatedImageUrl && isImageLoaded"
           @click="downloadImage"
-          class="flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
+          class="flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors text-sm sm:text-base"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
           Download
         </button>
       </div>
@@ -161,8 +173,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onBeforeUnmount } from 'vue'
+import { ref, computed, onBeforeUnmount, watch } from 'vue'
 import { createTask } from '~/api/index'
+import { useUserStore } from '~/stores/user'
+import { useRouter } from 'vue-router'
+import { useToast } from '~/composables/useToast'
+
+// 添加用户状态管理
+const userStore = useUserStore()
+const userInfo = computed(() => userStore.userInfo)
+const remainingTimes = ref(userStore.userInfo?.free_limit+userStore.userInfo?.remaining_limit|| 0)
+const { toast, showToast } = useToast()
+
+// 监听用户信息变化
+watch(
+  userInfo,
+  (newUserInfo: any) => {
+    remainingTimes.value = newUserInfo?.free_limit+newUserInfo?.remaining_limit || 0
+  },
+  { immediate: true }
+)
 
 // 添加 API 相关的类型定义
 interface CreateTaskResponse {
@@ -312,8 +342,36 @@ const downloadImage = async () => {
     }
   }
 }
+// 登录状态检查方法
+const checkLoginStatus = async () => {
+  if (!userInfo.value) {
+    showToast('Please login first to use this feature', 'error')
+    // 使用 id 选择器获取登录按钮
+    const loginButton = document.getElementById('bindLogin')
+    if (loginButton) {
+      loginButton.click()
+    }
+    return false
+  }
+  return true
+}
+
+// 次数检查方法
+const checkUsageLimit = () => {
+  console.log('remainingTimes.value',remainingTimes.value)
+  if (remainingTimes.value <= 0) {
+    showToast('Usage limit reached. Please upgrade to premium for more credits', 'error')
+    return false
+  }
+  return true
+}
 
 const generateImage = async () => {
+  // 检查用户是否登录和使用次数
+  if (!await checkLoginStatus() || !checkUsageLimit()) {
+    return
+  }
+
   if (!canGenerate.value || isGenerating.value) return
 
   isGenerating.value = true
@@ -332,6 +390,10 @@ const generateImage = async () => {
     const response: any = await createTask(formData)
 
     if (response.code === 200 && response.success) {
+      if (!response.data?.task_id || !response.data?.image_url) {
+        throw new Error('Invalid response data: missing taskId or imageUrl')
+      }
+      
       generatedImageUrl.value = response.data.image_url
       taskId.value = response.data.task_id
 
@@ -343,9 +405,21 @@ const generateImage = async () => {
       throw new Error(response.msg || 'Failed to create task')
     }
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error generating image:', error)
-    // Here you can add error handling
+    
+    // 根据错误类型显示不同的错误消息
+    let errorMessage = 'Failed to generate image, please try again later'
+    
+    if (error.message.includes('taskId and generateimage is empty')) {
+      errorMessage = 'Failed to generate image: Invalid task data'
+    } else if (error.message.includes('Invalid response data')) {
+      errorMessage = 'Failed to generate image: Invalid server response'
+    } else if (error.message.includes('network')) {
+      errorMessage = 'Network error, please check your connection'
+    }
+    
+    showToast(errorMessage, 'error')
   } finally {
     isGenerating.value = false
     stopProgressAnimation()

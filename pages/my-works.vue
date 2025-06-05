@@ -11,7 +11,7 @@
           <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
             <div class="text-white p-4 text-center">
               <p class="text-sm mb-2">{{ work.msg }}</p>
-              <p class="text-xs">{{ formatDate(work.created_at) }}</p>
+              <p class="text-xs bg-black/30 px-2 py-1 rounded">{{ formatDate(work.created_at) }}</p>
             </div>
           </div>
         </div>

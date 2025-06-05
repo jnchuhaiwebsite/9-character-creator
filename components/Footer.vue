@@ -60,7 +60,7 @@
             <p>© 2025 South Park Character Creator. All rights reserved.</p>
             <div class="flex items-center gap-2">
               <span>Contact:</span>
-              <a href="mailto:ceo@ghiblimagicmaker.com" class="hover:text-southpark-stan transition-colors">ceo@ghiblimagicmaker.com</a>
+              <a href="mailto:support@southparkai.com" class="hover:text-southpark-stan transition-colors">support@southparkai.com</a>
             </div>
           </div>
         </div>

@@ -31,7 +31,6 @@ export default defineNuxtConfig({
         { charset: 'utf-8' }, // 字符集
         { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }, // 移动端视口设置
         { name: 'description', content: 'Create your own South Park character with our AI-powered South Park Character Creator. Design unique South Park style characters with custom features, outfits, and accessories.' }, // 网站描述
-        { name: 'keywords', content: 'south park character creator, south park maker, create south park character, south park avatar maker, south park style generator, south park character generator' }
       ],
       link: [
         { rel: 'canonical', href: 'https://https://www.southparkai.com' }, // 规范链接
