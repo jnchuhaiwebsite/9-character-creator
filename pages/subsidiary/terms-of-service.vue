@@ -128,7 +128,8 @@
 </template>
 
 <script setup lang="ts">
-import { useHead, useSeoMeta } from 'nuxt/app'
+import { useSeo } from '~/composables/useSeo';
+
 
 // @ts-ignore: Nuxt macro function
 definePageMeta({
@@ -136,12 +137,12 @@ definePageMeta({
   name: 'terms-of-service'
 })
 
-useHead({
-  link: [{ rel: 'canonical', href: 'https://www.southparkai.com/subsidiary/terms-of-service' }]
-})
+// useHead({
+//   link: [{ rel: 'canonical', href: 'https://www.southparkai.com/subsidiary/terms-of-service' }]
+// })
 
-useSeoMeta({
-  title: 'South Park Character Creator | Terms of Service & Usage Rules',
+useSeo({
+  title: 'South Park Character Creator |Terms of Service & Usage Rules',
   description: 'South Park Character Creator Terms: Learn about our character generation service, account usage, character generation rights, and commercial usage terms.'
 })
 </script> 

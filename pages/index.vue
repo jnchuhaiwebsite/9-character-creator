@@ -115,6 +115,7 @@ const scrollToUpload = () => {
     uploadSection.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
 </script>
 
 <style scoped>

@@ -105,18 +105,33 @@
 <script setup lang="ts">
 import { useHead, useSeoMeta } from 'nuxt/app';
 
+import { useSeo } from '~/composables/useSeo';
+
+
+
+
 // @ts-ignore: Nuxt macro function
 definePageMeta({
   layout: false,
   name: 'privacy-policy'
 })
 
-useHead({
-  link: [{ rel: 'canonical', href: 'https://www.southparkai.com/subsidiary/privacy-policy' }],
-})
 
-useSeoMeta({
+// useHead({
+//   link: [{ rel: 'canonical', href: 'https://www.southparkai.com/subsidiary/privacy-policy' }],
+// })
+
+useSeo({
   title: 'South Park Character Creator | Privacy Policy',
   description: 'South Park Character Creator Privacy Policy: Data Collection, Usage, Sharing, Security, and Your Rights',
 })
+
+
+
+
+
+// useSeoMeta({
+//   title: 'South Park Character Creator | Privacy Policy',
+//   description: 'South Park Character Creator Privacy Policy: Data Collection, Usage, Sharing, Security, and Your Rights',
+// })
 </script> 

@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appid: process.env.APPID, // 应用 ID
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL, // 基础URL
     },
   },
   modules: [
