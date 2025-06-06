@@ -60,6 +60,25 @@
               class="w-full h-[200px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-southpark-stan text-sm sm:text-base"
               placeholder="Enter your image description..."
             ></textarea>
+            <!-- 添加尺寸选择器 -->
+            <div class="mt-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Image Size</label>
+              <div class="flex gap-2">
+                <button
+                  v-for="size in imageSizes"
+                  :key="size.value"
+                  @click="selectedSize = size.value"
+                  :class="[
+                    'px-3 py-2 rounded-md text-sm transition-colors',
+                    selectedSize === size.value
+                      ? 'bg-southpark-stan text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ]"
+                >
+                  {{ size.label }}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -227,7 +246,15 @@ const taskId = ref<string | null>(null)
 const progress = ref(0)
 const generatedImageUrl = ref<string>('')
 const isImageLoaded = ref(false)
+const selectedSize = ref('1:1') // 默认选择1:1
 let progressInterval: NodeJS.Timeout | null = null
+
+// 添加尺寸选项
+const imageSizes = [
+  { label: '1:1', value: '1:1' },
+  { label: '2:3', value: '2:3' },
+  { label: '3:2', value: '3:2' }
+]
 
 // 图生图模式的固定关键词
 // 这些关键词用于控制生成图片的风格和特征：
@@ -393,6 +420,11 @@ const generateImage = async () => {
     const formData = new FormData()
     formData.append('type', mode.value)
     formData.append('prompt', mode.value === 't2i' ? prompt.value : i2iPrompt)
+    
+    // 添加尺寸参数，只在文生图模式下传递
+    if (mode.value === 't2i') {
+      formData.append('size', selectedSize.value)
+    }
     
     if (mode.value === 'i2i' && referenceImage.value) {
       formData.append('file', referenceImage.value)
