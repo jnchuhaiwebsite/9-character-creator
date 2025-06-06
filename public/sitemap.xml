@@ -48,4 +48,12 @@
               <changefreq>weekly</changefreq>
               <priority>0.8</priority>
             </url>
+
+            
+            <url>
+              <loc>https://https://www.southparkai.com/my-works</loc>
+              <lastmod>2025-06-05T07:25:16.460Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.8</priority>
+            </url>
         </urlset>
