@@ -94,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useClerkAuth } from '~/utils/auth'
 import { useRouter } from 'vue-router'
 import { getOpusList } from '~/api/index'
@@ -132,7 +132,7 @@ interface ApiResponse<T> {
 }
 
 const router = useRouter()
-const { isSignedIn } = useClerkAuth()
+const { isSignedIn, isLoaded } = useClerkAuth()
 
 // 状态管理
 const works = ref<Work[]>([])
@@ -268,13 +268,29 @@ const copyPrompt = async (prompt: string) => {
 }
 
 onMounted(() => {
-  if (!isSignedIn.value) {
-    router.push('/')
-    return
-  }
+  const { isLoaded } = useClerkAuth()
   
-  fetchWorks()
-  setupInfiniteScroll()
+  // 等待 Clerk 加载完成
+  if (!isLoaded.value) {
+    const unwatch = watch(isLoaded, (newValue) => {
+      if (newValue) {
+        unwatch() // 停止监听
+        if (!isSignedIn.value) {
+          router.push('/')
+          return
+        }
+        fetchWorks()
+        setupInfiniteScroll()
+      }
+    })
+  } else {
+    if (!isSignedIn.value) {
+      router.push('/')
+      return
+    }
+    fetchWorks()
+    setupInfiniteScroll()
+  }
 })
 
 onUnmounted(() => {
