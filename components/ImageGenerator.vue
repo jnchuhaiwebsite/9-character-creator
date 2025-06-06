@@ -264,7 +264,8 @@ const imageSizes = [
 // - clean lines: 使用清晰的线条
 // - bold colors: 使用鲜明的颜色
 // - iconic South Park aesthetic: 保持南方公园标志性的美学特征
-const i2iPrompt = "Transform the uploaded image into a South Park-style character. The character should have {hair_type} hair in {hair_color} color, wearing a {clothing_type} of {clothing_color}. The eyes should be large and circular, with a {mouth_expression} smile. The face should be {face_shape}, with simple features and bold outlines. The background should be minimal, using a solid color or a simple gradient. Ensure the style is flat, cartoonish, and true to South Park's iconic design."
+// const i2iPrompt = "Transform the uploaded image into a South Park-style character. The character should have {hair_type} hair in {hair_color} color, wearing a {clothing_type} of {clothing_color}. The eyes should be large and circular, with a {mouth_expression} smile. The face should be {face_shape}, with simple features and bold outlines. The background should be minimal, using a solid color or a simple gradient. Ensure the style is flat, cartoonish, and true to South Park's iconic design."
+const i2iPrompt = "Convert to South Park cartoon style,flat color style,thick black outlines,simple shapes,big round eyes, exaggerated expressions,paper-cutout look,bright, vibrant colors"
 
 // 添加图片预览 URL 的计算属性
 const previewUrl = computed(() => {
@@ -280,10 +281,10 @@ onBeforeUnmount(() => {
 })
 
 const presetPrompts = [
-  'Design a South Park character with a blue hoodie, jeans, and spiky blonde hair. The character should have an exaggerated, cheeky grin, large eyes, and be in a standing pose with their hands in their pockets',
-  'Create a South Park character with a green earmuff hat, yellow winter jacket, brown pants, and simple black shoes. The character should have a cheeky smile and stand with their hands on their hips. Keep the overall style blocky and cartoonish with minimal detail.',
-  'Create a South Park character with a round head, large circular eyes, simple flat hair, and wearing a bright red winter coat. The character should have a mischievous expression and be holding a snowball. The overall style should reflect the signature blocky, cartoonish look of South Park.',
-  'boy  South Park cartoon style'
+  'Similar to A South Park style Stan Marsh: blue parka with red lining, brown hair, oval eyes, small nose. Simplified blocky body, stick arms. Flat colors (blue, red, brown), high contrast, minimal detail. Hand-drawn, cutout paper aesthetic.',
+  'Similar to South Park Eric Cartman: round head, red sweater, blonde bowl cut. Large body, short legs, stick arms. Facial features: small eyes, wide mouth, no nose. Flat red, white, and blonde colors, bold outlines, high contrast. Crude, comedic style.',
+  'Similar to Kyle Broflovski in South Park art style: green earflap hat, blue jacket, red shirt. Curly brown hair, oval eyes, prominent front teeth. Simplified proportions, stick limbs. Flat green, blue, red colors, thick black outlines, no shading.',
+  'Similar to South Park Kenny: orange parka with hood covering face, only muffled mouth visible. Stick figure limbs, small body, large head. Flat orange, yellow, and brown colors, high-contrast outlines, cutout animation style.'
 ]
 
 const selectPresetPrompt = (preset?: string) => {
