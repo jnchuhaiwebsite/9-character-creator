@@ -13,16 +13,16 @@
         <div class="flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
           <div 
             class="px-3 md:px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm md:text-base"
-            :class="currentCategory === 'all' ? 'bg-baby-coral text-white' : 'bg-white/70 text-gray-700 hover:bg-white'"
+            :class="currentCategory === 'all' ? 'bg-southpark-stanButton text-white' : 'bg-white/70 text-gray-700 hover:bg-white'"
             @click="currentCategory = 'all'"
           >
-            All
+            All Posts
           </div>
           <div 
             v-for="category in allCategories" 
             :key="category"
             class="px-3 md:px-4 py-2 rounded-lg transition-colors whitespace-nowrap cursor-pointer text-sm md:text-base"
-            :class="currentCategory === category ? 'bg-baby-coral text-white' : 'bg-white/70 text-gray-700 hover:bg-white'"
+            :class="currentCategory === category ? 'bg-southpark-stanButton text-white' : 'bg-white/70 text-gray-700 hover:bg-white'"
             @click="currentCategory = category"
           >
             {{ category }}
