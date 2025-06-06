@@ -28,7 +28,12 @@ export function useSeo(options: SeoOptions) {
   // 确保描述在140-160个字符之间
   let description = options.description
   if (description.length < 140) {
-    description = description + ' - Generate unique and meaningful baby names with our AI-powered baby name generator.'
+    const suffix = ' - Create unique South Park style characters with our AI-powered character generator.'
+    const maxPrefixLength = 160 - suffix.length
+    if (description.length > maxPrefixLength) {
+      description = description.substring(0, maxPrefixLength - 3) + '...'
+    }
+    description = description + suffix
   } else if (description.length > 160) {
     description = description.substring(0, 157) + '...'
   }
@@ -40,11 +45,6 @@ export function useSeo(options: SeoOptions) {
         name: 'description',
         content: description,
       },
-      // {
-      //   name: 'keywords',
-      //   content: 'baby name generator, AI baby names, unique baby names, baby name suggestions, baby name finder, baby name ideas',
-      // },
-      // Open Graph
       {
         property: 'og:title',
         content: options.ogTitle || title,
@@ -56,7 +56,7 @@ export function useSeo(options: SeoOptions) {
       { property: 'og:type', content: options.ogType || 'website' },
       { property: 'og:url', content: fullUrlWithoutSlash },
       { property: 'og:image', content: options.ogImage || `${baseUrl}/logo.png` },
-      { property: 'og:site_name', content: 'baby name generator ai' },
+      { property: 'og:site_name', content: 'south park character creator' },
       ...(options.other || []),
 
       // Twitter Card
