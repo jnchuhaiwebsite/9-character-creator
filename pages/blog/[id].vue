@@ -148,7 +148,7 @@ const handleBackToList = () => {
 
 /* 类别标签样式 */
 .category-badge {
-  background-color: var(--theme-primary);
+  background-color: #1D90FF;
   color: white;
 }
 

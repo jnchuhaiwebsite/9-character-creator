@@ -44,7 +44,7 @@
                 <h2 class="text-lg md:text-xl font-bold mb-1 md:mb-2 text-gray-700 truncate">{{ post.title }}</h2>
                 <p class="text-sm md:text-base text-gray-600 line-clamp-2">{{ post.description }}</p>
               </div>
-              <span class="px-2 md:px-3 py-1 category-badge text-xs md:text-sm rounded-full whitespace-nowrap inline-block w-fit">
+              <span class="px-2 md:px-3 py-1 category-badge text-xs md:text-sm rounded-full whitespace-nowrap inline-block w-fit bg-southpark-stanButton">
                 {{ getCategoryLabel(post.category) }}
               </span>
             </div>
@@ -88,7 +88,7 @@ onMounted(() => {
 
 <style>
 .category-badge {
-  background-color: var(--primary-color);
+  background-color: #1D90FF;
   color: white;
 }
 </style> 
