@@ -315,18 +315,66 @@ const canGenerate = computed(() => {
   }
 })
 
-const handleFileSelect = (event: Event) => {
+const handleFileSelect = async (event: Event) => {
   const input = event.target as HTMLInputElement
   if (input.files && input.files[0]) {
-    referenceImage.value = input.files[0]
+    const file = input.files[0]
+    // 处理图片方向
+    const processedFile = await fixImageOrientation(file)
+    referenceImage.value = processedFile
   }
 }
 
-const handleImageDrop = (event: DragEvent) => {
+const handleImageDrop = async (event: DragEvent) => {
   const file = event.dataTransfer?.files[0]
   if (file && file.type.startsWith('image/')) {
-    referenceImage.value = file
+    // 处理图片方向
+    const processedFile = await fixImageOrientation(file)
+    referenceImage.value = processedFile
   }
+}
+
+// 添加处理图片方向的函数
+const fixImageOrientation = async (file: File): Promise<File> => {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      const ctx = canvas.getContext('2d')
+      
+      // 设置画布尺寸
+      canvas.width = img.width
+      canvas.height = img.height
+      
+      // 绘制图片
+      ctx?.drawImage(img, 0, 0)
+      
+      // 将画布转换为 Blob
+      canvas.toBlob((blob) => {
+        if (blob) {
+          // 创建新的 File 对象
+          const newFile = new File([blob], file.name, {
+            type: file.type,
+            lastModified: file.lastModified
+          })
+          resolve(newFile)
+        } else {
+          reject(new Error('Failed to create blob'))
+        }
+      }, file.type)
+    }
+    
+    img.onerror = () => {
+      reject(new Error('Failed to load image'))
+    }
+    
+    // 创建图片 URL 并加载图片
+    const url = URL.createObjectURL(file)
+    img.src = url
+    
+    // 清理 URL
+    URL.revokeObjectURL(url)
+  })
 }
 
 const removeImage = () => {
