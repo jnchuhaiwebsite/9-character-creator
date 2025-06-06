@@ -84,6 +84,8 @@ const partnerSites = [
   { url: 'https://www.invictgen.com/', name: 'InvinCard' },
   { url: 'https://www.pencilartai.com/', name: ' PencilArtMagic ' },
   { url: 'https://www.xbgremove.com/', name: 'Erase BG' },
+  { url: 'https://www.genbabyname.com/', name: 'Baby Name AI' },
+  { url: 'https://www.kontextimg.com/', name: 'Kontext  Image' },
   
   // 莱芜
   { url: ' https://www.framepola.com/', name: 'Framepola' },
