@@ -36,7 +36,7 @@ const blogPostsData: BlogPost[] = [
       <p>Whether you want to create a main character or a supporting role, our Character Creator can help you realize your creative vision.</p>
     `,
     description: 'Learn how to use our South Park Character Creator to create unique characters',
-    date: '06/06/2025',
+    date: 'Jun 6, 2025',
     category: 'Character Creation',
     skip: false,
     cta: "Start Creating",
@@ -66,7 +66,7 @@ const blogPostsData: BlogPost[] = [
       <p>Our Character Creator continues to evolve, providing creators with deeper insights and more accurate character generation suggestions.</p>
     `,
     description: 'Explore the latest South Park character creation trends and innovations brought by AI technology',
-    date: '06/06/2025',
+    date: 'Jun 6, 2025',
     category: 'Creation Trends',
     skip: false,
     cta: "Explore Trends",
@@ -111,7 +111,7 @@ const blogPostsData: BlogPost[] = [
       <p class="mt-6">By following these steps, you'll be able to make the most of our Character Creator to create perfect South Park style characters.</p>
     `,
     description: 'Learn how to effectively use our Character Creator to create perfect characters',
-    date: '06/06/2025',
+    date: 'Jun 6, 2025',
     category: 'Tutorials',
     skip: false,
     cta: "Start Learning",
