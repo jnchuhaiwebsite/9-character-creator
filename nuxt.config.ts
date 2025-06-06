@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Create your own South Park character with our AI-powered South Park Character Creator. Design unique South Park style characters with custom features, outfits, and accessories.' }, // 网站描述
       ],
       link: [
-        { rel: 'canonical', href: 'https://https://www.southparkai.com' }, // 规范链接
+        { rel: 'canonical', href: 'https://www.southparkai.com' }, // 规范链接
         // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'x-default' }, // 默认语言版本
         // { rel: 'alternate', href: 'https://www.genparkmaker.com', hreflang: 'en' }, // 英文版本
       ],
