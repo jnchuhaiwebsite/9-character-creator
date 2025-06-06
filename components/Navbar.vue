@@ -114,7 +114,10 @@
                 </NuxtLink>
                 <div
                   v-else-if="section.id"
-                  @click="handleNavClick(section.id)"
+                  @click="() => {
+                    handleNavClick(section.id);
+                    isOpen = false;
+                  }"
                   class="block text-gray-600 hover:text-baby-coral text-base py-2 transition-colors"
                 >
                   {{ section.name }}
