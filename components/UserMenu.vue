@@ -221,12 +221,16 @@ const getUserInfo = async () => {
   try {
     const userData = await userStore.fetchUserInfo();
     if (userData) {
-      // 更新用户信息
-      limit.value = userData.free_limit+userData.remaining_limit|| 0;
+      // 确保数值类型转换，并处理可能的undefined或null值
+      const freeLimit = Number(userData.free_limit) || 0;
+      const remainingLimit = Number(userData.remaining_limit) || 0;
+      limit.value = freeLimit + remainingLimit;
       vipLastTime.value = userData.vipLastTime || "";
     }
   } catch (error) {
     console.error("获取用户信息失败:", error);
+    // 发生错误时设置默认值
+    limit.value = 0;
   }
 }
 
