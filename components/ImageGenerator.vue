@@ -170,6 +170,15 @@
       </div>
     </div>
   </div>
+  
+  <!-- 添加 Toast 组件 -->
+  <Toast 
+    :show="toast.show" 
+    :title="toast.title" 
+    :message="toast.message" 
+    :type="toast.type"
+    :duration="toast.duration"
+  />
 </template>
 
 <script setup lang="ts">
@@ -178,6 +187,7 @@ import { createTask } from '~/api/index'
 import { useUserStore } from '~/stores/user'
 import { useRouter } from 'vue-router'
 import { useToast } from '~/composables/useToast'
+import Toast from '~/components/Toast.vue'
 
 // 添加用户状态管理
 const userStore = useUserStore()
