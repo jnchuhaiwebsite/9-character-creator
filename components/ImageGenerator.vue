@@ -9,9 +9,9 @@
       </h2>
     </div>
     <!-- 生成图片 -->
-  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16">
+  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16  w-full">
     <!-- 左侧表单区域 -->
-    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px]">
+    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px] min-h-[450px]">
       <!-- Mode Toggle -->
       <div class="flex items-center mb-4">
         <button
@@ -155,7 +155,7 @@
       </div>
     </div>
     <!-- 右侧预览区域 -->
-    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0">
+    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0 min-h-[450px]">
       <div class="w-full aspect-[1/1] max-h-[400px] bg-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden">
         <div class="w-full h-full flex items-center justify-center">
           <img
