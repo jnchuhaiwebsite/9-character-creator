@@ -69,10 +69,11 @@
           <div class="mt-auto">
             <button
               @click="plan.code ? handleUpgradePlan(plan) : null"
-              :disabled="upgradingPlanId === plan.code"
+              :disabled="!plan.code || upgradingPlanId === plan.code"
               :class="[
                 'w-full py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md hover:shadow-lg',
                 getButtonClass(plan),
+                !plan.code ? 'opacity-50 cursor-not-allowed' : ''
               ]"
             >
               <div v-if="upgradingPlanId === plan.code" class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white mr-2"></div>
@@ -120,10 +121,10 @@ export default defineComponent({
     const getButtonClass = (plan: any): string => {
       if (plan.price === 0) {
         return "bg-southpark-snow/10 text-southpark-stan hover:bg-southpark-snow/20";
-      } else if (plan.is_popular) {
+      } else if (plan.is_popular === 1) {
         return "bg-southpark-stanButton text-white hover:opacity-90";
       } else {
-        return "bg-southpark-stanButton text-white hover:opacity-90";
+        return "bg-southpark-stanButton/70 text-southpark-stan hover:bg-southpark-stanButton text-white ";
       }
     };
     

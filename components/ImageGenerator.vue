@@ -260,6 +260,7 @@ const presetPrompts = [
 ]
 
 const selectPresetPrompt = (preset?: string) => {
+
   if (preset) {
     prompt.value = preset
   } else {

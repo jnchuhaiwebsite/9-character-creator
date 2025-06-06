@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-bold text-gray-800 mb-8">My Works</h1>
       
       <!-- 作品列表 -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div v-for="work in works" :key="work.task_id" class="relative aspect-square bg-gray-100 rounded-lg overflow-hidden group">
           <!-- 操作按钮 -->
           <div class="absolute top-2 right-2 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -47,7 +47,7 @@
           <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
             <div class="text-white p-4 text-center">
               <p class="text-sm mb-2">{{ work.msg }}</p>
-              <p class="text-xs bg-black/30 px-2 py-1 rounded">{{ formatDate(work.created_at) }}</p>
+              <!-- <p class="text-xs bg-black/30 px-2 py-1 rounded">{{ formatDate(work.created_at) }}</p> -->
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@ const fetchWorks = async (page: number = 1) => {
 
     const response = await getOpusList({
       page,
-      page_size: 9,
+      page_size: 12,
       status: 1
     }) as ApiResponse<Work>
 
