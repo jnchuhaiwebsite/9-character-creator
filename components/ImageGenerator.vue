@@ -9,9 +9,9 @@
       </h2>
     </div>
     <!-- 生成图片 -->
-  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16 w-full">
+  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16">
     <!-- 左侧表单区域 -->
-    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px] min-h-[450px]">
+    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px]">
       <!-- Mode Toggle -->
       <div class="flex items-center mb-4">
         <button
@@ -155,7 +155,7 @@
       </div>
     </div>
     <!-- 右侧预览区域 -->
-    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0 min-h-[450px]">
+    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0">
       <div class="w-full aspect-[1/1] max-h-[400px] bg-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden">
         <div class="w-full h-full flex items-center justify-center">
           <img
@@ -315,66 +315,18 @@ const canGenerate = computed(() => {
   }
 })
 
-const handleFileSelect = async (event: Event) => {
+const handleFileSelect = (event: Event) => {
   const input = event.target as HTMLInputElement
   if (input.files && input.files[0]) {
-    const file = input.files[0]
-    // 处理图片方向
-    const processedFile = await fixImageOrientation(file)
-    referenceImage.value = processedFile
+    referenceImage.value = input.files[0]
   }
 }
 
-const handleImageDrop = async (event: DragEvent) => {
+const handleImageDrop = (event: DragEvent) => {
   const file = event.dataTransfer?.files[0]
   if (file && file.type.startsWith('image/')) {
-    // 处理图片方向
-    const processedFile = await fixImageOrientation(file)
-    referenceImage.value = processedFile
+    referenceImage.value = file
   }
-}
-
-// 添加处理图片方向的函数
-const fixImageOrientation = async (file: File): Promise<File> => {
-  return new Promise((resolve, reject) => {
-    const img = new Image()
-    img.onload = () => {
-      const canvas = document.createElement('canvas')
-      const ctx = canvas.getContext('2d')
-      
-      // 设置画布尺寸
-      canvas.width = img.width
-      canvas.height = img.height
-      
-      // 绘制图片
-      ctx?.drawImage(img, 0, 0)
-      
-      // 将画布转换为 Blob
-      canvas.toBlob((blob) => {
-        if (blob) {
-          // 创建新的 File 对象
-          const newFile = new File([blob], file.name, {
-            type: file.type,
-            lastModified: file.lastModified
-          })
-          resolve(newFile)
-        } else {
-          reject(new Error('Failed to create blob'))
-        }
-      }, file.type)
-    }
-    
-    img.onerror = () => {
-      reject(new Error('Failed to load image'))
-    }
-    
-    // 创建图片 URL 并加载图片
-    const url = URL.createObjectURL(file)
-    img.src = url
-    
-    // 清理 URL
-    URL.revokeObjectURL(url)
-  })
 }
 
 const removeImage = () => {
