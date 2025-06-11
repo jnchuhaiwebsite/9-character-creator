@@ -9,9 +9,9 @@
       </h2>
     </div>
     <!-- 生成图片 -->
-  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16  w-full">
+  <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-4 sm:p-6 max-w-[1200px] mx-auto mt-2 mb-16 w-full">
     <!-- 左侧表单区域 -->
-    <div class="lg:w-[500px] w-full lg:pr-8 flex flex-col h-[450px] min-h-[450px]">
+    <div class="lg:w-1/2 w-full lg:pr-8 flex flex-col h-[450px] min-h-[450px]">
       <!-- Mode Toggle -->
       <div class="flex items-center mb-4">
         <button
@@ -137,7 +137,7 @@
         </div>
       </div>
       <!-- Generate button -->
-      <div class="mt-8 flex flex-col items-center">
+      <div class="mt-8 flex flex-col items-center justify-center">
         <button
           @click="generateImage"
           class="w-32 sm:w-40 bg-southpark-stan text-white py-2 sm:py-3 px-3 sm:px-4 rounded-md hover:bg-southpark-stan/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-sm sm:text-base"
@@ -146,22 +146,16 @@
           <span v-if="isGenerating" class="animate-spin mr-2 h-4 w-4 sm:h-5 sm:w-5 border-2 border-white border-t-transparent rounded-full"></span>
           {{ isGenerating ? 'Loading' : 'Generate' }}
         </button>
-        <div v-if="isGenerating" class="w-full mt-4">
-          <div class="w-full bg-gray-200 rounded-full h-2 sm:h-2.5">
-            <div class="bg-southpark-stan h-2 sm:h-2.5 rounded-full transition-all duration-300" :style="{ width: `${progress}%` }"></div>
-          </div>
-          <p class="text-gray-600 text-xs sm:text-sm mt-1 text-center">{{ progress }}%</p>
-        </div>
       </div>
     </div>
     <!-- 右侧预览区域 -->
-    <div class="lg:w-[500px] w-full flex flex-col items-center justify-center mt-8 lg:mt-0 min-h-[450px]">
-      <div class="w-full aspect-[1/1] max-h-[400px] bg-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden">
+    <div class="lg:w-1/2 w-full flex flex-col items-center justify-center mt-8 lg:mt-0 min-h-[450px]">
+      <div class="w-full aspect-[1/1] max-h-[400px] bg-southpark-tree rounded-xl flex items-center justify-center relative overflow-hidden p-2">
         <div class="w-full h-full flex items-center justify-center">
           <img
             v-if="generatedImageUrl"
             :src="generatedImageUrl"
-            class="max-w-full max-h-full object-contain transition-opacity duration-300"
+            class="max-w-full max-h-full object-contain transition-opacity duration-300 p-1"
             alt="Generated image"
             @load="isImageLoaded = true"
             @error="isImageLoaded = false"
@@ -169,19 +163,26 @@
           <img
             v-else
             src="/img/demo.webp"
-            class="max-w-full max-h-full object-contain"
+            class="max-w-full max-h-full object-contain p-1"
             alt="Demo image"
           />
         </div>
-        <div v-if="generatedImageUrl && !isImageLoaded" class="absolute inset-0 flex items-center justify-center bg-gray-100">
-          <div class="animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-southpark-stan"></div>
+        <div v-if="isGenerating" class="absolute inset-0 flex flex-col items-center justify-center bg-southpark-tree/80">
+          <div class="relative">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-black border-t-transparent mb-4"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-black font-medium">{{ progress }}%</span>
+            </div>
+          </div>
+          <p class="text-black text-lg font-bold">Generating...</p>
+          <p class="text-black/80 text-sm mt-2 font-semibold">Please wait while we create your unique character</p>
         </div>
       </div>
-      <div class="flex w-full justify-center gap-4 mt-4">
+      <div class="flex w-full justify-center gap-4 mt-4 h-[40px] items-center">
         <button
           v-if="generatedImageUrl && isImageLoaded"
           @click="downloadImage"
-          class="flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors text-sm sm:text-base"
+          class="flex items-center gap-2 px-4 sm:px-6 py-2 rounded-md bg-southpark-stan text-white hover:bg-southpark-stan/80 transition-colors text-sm sm:text-base"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
           Download
@@ -213,6 +214,7 @@ const userStore = useUserStore()
 const userInfo = computed(() => userStore.userInfo)
 const remainingTimes = ref(userStore.userInfo?.free_limit+userStore.userInfo?.remaining_limit|| 0)
 const { toast, showToast } = useToast()
+const router = useRouter()
 
 // 监听用户信息变化
 watch(
@@ -400,6 +402,11 @@ const checkUsageLimit = () => {
   console.log('remainingTimes.value',remainingTimes.value)
   if (remainingTimes.value <= 0) {
     showToast('Usage limit reached. Please upgrade to premium for more credits', 'error')
+    // 平滑滚动到套餐部分
+    const pricingSection = document.getElementById('pricing')
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' })
+    }
     return false
   }
   return true
@@ -440,6 +447,10 @@ const generateImage = async () => {
       
       generatedImageUrl.value = response.data.image_url
       taskId.value = response.data.task_id
+
+      // 更新用户信息
+      await userStore.fetchUserInfo(true)
+      remainingTimes.value = userStore.userInfo?.free_limit + userStore.userInfo?.remaining_limit || 0
 
       emit('taskCreated', {
         taskId: response.data.task_id,
