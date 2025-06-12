@@ -91,7 +91,7 @@ const partnerSites = [
   { url: ' https://www.framepola.com/', name: 'Framepola' },
   { url: 'https://www.imagefusionai.com/', name: 'ImageFusion' },
   { url: 'https://www.aioutfitgen.com/', name: 'Aioutfitgen' },
-  { url: 'https://www.seedancepro.com/', name: 'seedance 1.0 pro' },
+  { url: 'https://www.seedancepro.com/', name: 'Seedance 1.0 pro' },
 ]
 </script>
 
