@@ -168,14 +168,12 @@
           />
         </div>
         <div v-if="isGenerating" class="absolute inset-0 flex flex-col items-center justify-center bg-southpark-tree/80">
-          <div class="relative">
-            <div class="animate-spin rounded-full h-12 w-12 border-4 border-black border-t-transparent mb-4"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-black font-medium">{{ progress }}%</span>
-            </div>
+          <div class="flex flex-col items-center">
+            <div class="animate-spin rounded-full h-14 w-14 border-4 border-southpark-stan border-t-transparent"></div>
+            <span class="text-southpark-stan font-medium text-2xl mt-2">{{ progress }}%</span>
           </div>
-          <p class="text-black text-lg font-bold">Generating...</p>
-          <p class="text-black/80 text-sm mt-2 font-semibold">Please wait while we create your unique character</p>
+          <p class="text-southpark-stan text-lg font-bold mt-4">Generating...</p>
+          <p class="text-southpark-stan text-sm mt-2 font-semibold">Please wait while we create your unique character</p>
         </div>
       </div>
       <div class="flex w-full justify-center gap-4 mt-4 h-[40px] items-center">
