@@ -14,7 +14,7 @@ const urlList = {
   getCurrentUser: baseUrl + '/api/user/info',   // 获取当前用户信息
   createTasks: baseUrl + '/api/task/park_maker/create',     // 创建任务
   getSubPlans: baseUrl + '/api/website/priceList',     // 获取套餐信息
-  payOrder: baseUrl + '/api/pay/stripe',  // 支付
+  payOrder: baseUrl + '/api/pay/paypal',  // 支付
   opusList: baseUrl + '/api/user/opus_list' // 获取用户作品列表
 }
 
